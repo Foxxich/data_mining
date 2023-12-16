@@ -1,0 +1,58 @@
+Model,Borough,Predicted Complaint
+Decision Tree,QUEENS,Non-Emergency Police Matter
+Decision Tree,QUEENS,DSNY Internal
+Decision Tree,MANHATTAN,Smoking
+Decision Tree,MANHATTAN,Mobile Food Vendor
+Decision Tree,MANHATTAN,Illegal Posting
+Decision Tree,BROOKLYN,Illegal Posting
+Decision Tree,QUEENS,Noise - Street/Sidewalk
+Decision Tree,BROOKLYN,PLUMBING
+Decision Tree,BROOKLYN,Adopt-A-Basket
+Decision Tree,STATEN ISLAND,Bus Stop Shelter Complaint
+Decision Tree,STATEN ISLAND,Street Sign - Damaged
+Decision Tree,BROOKLYN,Noise - Street/Sidewalk
+Decision Tree,BROOKLYN,Panhandling
+Decision Tree,STATEN ISLAND,Noise - Helicopter
+Decision Tree,BROOKLYN,Non-Emergency Police Matter
+Decision Tree,Unspecified,Street Light Condition
+Decision Tree,BROOKLYN,Unleashed Dog
+Decision Tree,MANHATTAN,Noise - Vehicle
+Decision Tree,MANHATTAN,Green Taxi Complaint
+Decision Tree,STATEN ISLAND,Illegal Posting
+Decision Tree,STATEN ISLAND,Illegal Fireworks
+Decision Tree,QUEENS,Illegal Posting
+Logistic Regression,QUEENS,Non-Emergency Police Matter
+Logistic Regression,QUEENS,Unleashed Dog
+Logistic Regression,MANHATTAN,Ferry Complaint
+Logistic Regression,MANHATTAN,Street Light Condition
+Logistic Regression,MANHATTAN,Illegal Posting
+Logistic Regression,BROOKLYN,Noise - Street/Sidewalk
+Logistic Regression,QUEENS,Noise - Street/Sidewalk
+Logistic Regression,STATEN ISLAND,Street Sign - Damaged
+Logistic Regression,STATEN ISLAND,Ferry Complaint
+Logistic Regression,BROOKLYN,Illegal Posting
+Logistic Regression,BROOKLYN,Noise - Vehicle
+Logistic Regression,STATEN ISLAND,Illegal Posting
+Logistic Regression,Unspecified,Street Sign - Damaged
+Logistic Regression,BROOKLYN,Panhandling
+Logistic Regression,BROOKLYN,PLUMBING
+Logistic Regression,MANHATTAN,Window Guard
+Logistic Regression,STATEN ISLAND,Sanitation Worker or Vehicle Complaint
+Logistic Regression,QUEENS,Illegal Posting
+SVM,QUEENS,Noise - Street/Sidewalk
+SVM,QUEENS,Unleashed Dog
+SVM,MANHATTAN,Ferry Complaint
+SVM,MANHATTAN,Illegal Fireworks
+SVM,MANHATTAN,Illegal Posting
+SVM,BROOKLYN,Noise - Vehicle
+SVM,QUEENS,Asbestos
+SVM,BROOKLYN,Noise - Street/Sidewalk
+SVM,BROOKLYN,Oil or Gas Spill
+SVM,STATEN ISLAND,Street Sign - Damaged
+SVM,BROOKLYN,Non-Emergency Police Matter
+SVM,STATEN ISLAND,Ferry Complaint
+SVM,BROOKLYN,Illegal Posting
+SVM,Unspecified,Street Sign - Damaged
+SVM,BROOKLYN,Panhandling
+SVM,MANHATTAN,Noise - Street/Sidewalk
+SVM,STATEN ISLAND,Sanitation Worker or Vehicle Complaint

@@ -296,8 +296,12 @@ class ComplaintsClassifier:
         complaints_with_labels['Complaint Type'] = complaint_type_labels
         complaints_with_labels['Borough'] = borough_labels
 
+        # Grupowanie i wybieranie top 5 problemów dla każdej dzielnicy
+        top_5_per_district = complaints_with_labels.groupby('Borough').apply(
+            lambda x: x.nlargest(5, 'Complaints')).reset_index(drop=True)
+
         # Zapisanie ocen skarg do pliku CSV
-        complaints_with_labels.to_csv('complaints_per_district_yearly.csv', index=False)
+        top_5_per_district.to_csv('top_5_complaints_per_district.csv', index=False)
 
 
 if __name__ == "__main__":
