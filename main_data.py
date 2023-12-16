@@ -72,7 +72,7 @@ class ComplaintsClassifier:
                 df_filled[column] = self.le.fit_transform(df_filled[column].astype(str))
 
         # Ograniczenie zbioru danych do losowego podzbioru (np. 1% oryginalnych danych)
-        df_sample = df_filled.sample(frac=0.01, random_state=42)
+        df_sample = df_filled.sample(frac=0.0001, random_state=42)
 
         # Podział ograniczonego zestawu danych na część do treningu i testowania modelu
         x = df_sample.drop('Complaint Type', axis=1)  # Cechy (bez kolumny 'Complaint Type')
@@ -244,15 +244,22 @@ class ComplaintsClassifier:
         # Zapis wykresu prognozy do pliku HTML
         forecast_fig.write_html(f'arima_forecast_{model_type}.html')
 
-    def complaints_per_district_yearly(self):
+    def complaints_per_district_yearly(self, include_complaint_type=True, include_borough=True):
         # Konwertowanie kolumny 'Created Date' na typ daty
         self.df['Created Date'] = pd.to_datetime(self.df['Created Date'])
 
         # Tworzenie kolumny 'Year' na podstawie roku z kolumny 'Created Date'
         self.df['Year'] = self.df['Created Date'].dt.year
 
-        # Grupowanie po 'Year' i 'Borough' dla uzyskania liczby skarg
-        complaints_by_year_and_district = self.df.groupby(['Year', 'Borough']).size().reset_index(name='Complaints')
+        # Wybór kolumn do uwzględnienia w grupowaniu
+        columns_to_group_by = ['Year']
+        if include_borough:
+            columns_to_group_by.append('Borough')
+        if include_complaint_type:
+            columns_to_group_by.append('Complaint Type')
+
+        # Grupowanie po odpowiednich kolumnach dla uzyskania liczby skarg
+        complaints_by_year_and_district = self.df.groupby(columns_to_group_by).size().reset_index(name='Complaints')
 
         # Obliczenie łącznej liczby skarg dla każdego roku w celu wyznaczenia oceny
         total_complaints_per_year = complaints_by_year_and_district.groupby('Year')['Complaints'].sum()
@@ -278,6 +285,19 @@ class ComplaintsClassifier:
 
         # Zapis wykresu do pliku HTML
         fig.write_html('complaints_per_district_yearly.html')
+
+    def save_all_to_csv(self, complaints_per_district_yearly):
+        # Pobranie oryginalnych nazw etykiet dla kolumn Complaint Type i Borough
+        complaint_type_labels = self.le_complaint.inverse_transform(complaints_per_district_yearly['Complaint Type'])
+        borough_labels = self.le_borough.inverse_transform(complaints_per_district_yearly['Borough'])
+
+        # Utworzenie kopii DataFrame z prawidłowymi nazwami etykiet
+        complaints_with_labels = complaints_per_district_yearly.copy()
+        complaints_with_labels['Complaint Type'] = complaint_type_labels
+        complaints_with_labels['Borough'] = borough_labels
+
+        # Zapisanie ocen skarg do pliku CSV
+        complaints_with_labels.to_csv('complaints_per_district_yearly.csv', index=False)
 
 
 if __name__ == "__main__":
@@ -306,4 +326,29 @@ if __name__ == "__main__":
     classifier.generate_advanced_plot_results(svm_model, svm_y_pred, 'svc')
     classifier.time_series_decomposition_and_forecast(svm_y_pred, 'svc')
 
+    classifier.save_all_to_csv(classifier.complaints_per_district_yearly())
 
+    # Saving data using models and pred variables to CSV
+    models = [('Decision Tree', dt_model, dt_y_pred),
+              ('Logistic Regression', lr_model, lr_y_pred),
+              ('SVM', svm_model, svm_y_pred)]
+
+    results_df = pd.DataFrame(columns=['Model', 'Borough', 'Predicted Complaint'])
+
+    for model_name, model, pred in models[:3]:
+        if pred is not None:
+            results = classifier.generate_results_dataframe(model, pred)
+            if 'Borough' in results and results['Borough'].dtype == 'object':
+                results['Model'] = model_name
+                results_df = pd.concat([results_df, results], ignore_index=True)
+            else:
+                print(f"Skipping '{model_name}' - 'Borough' inverse transform due to inconsistent data type.")
+
+    if 'Borough' in results_df:
+        try:
+            results_df['Borough'] = classifier.le_borough.inverse_transform(results_df['Borough'])
+        except Exception as e:
+            print(f"Error: {e}. Unable to perform 'Borough' inverse transform.")
+
+    results_df = results_df.drop_duplicates().groupby('Predicted Complaint').head(10)
+    results_df.to_csv('results_from_models_with_model.csv', index=False)
