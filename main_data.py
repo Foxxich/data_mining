@@ -2,7 +2,6 @@ import warnings
 
 import matplotlib
 import matplotlib.pyplot as plt
-import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
@@ -16,9 +15,6 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.seasonal import seasonal_decompose
-from sklearn.metrics import roc_curve, auc
-import shap
-
 
 # Ignorowanie wszystkich ostrzeżeń użytkownika
 warnings.filterwarnings('ignore', category=UserWarning)
@@ -75,8 +71,8 @@ class ComplaintsClassifier:
             if df_filled[column].dtype == 'object':
                 df_filled[column] = self.le.fit_transform(df_filled[column].astype(str))
 
-        # Ograniczenie zbioru danych do losowego podzbioru (np. 0,1% oryginalnych danych)
-        df_sample = df_filled.sample(frac=0.001, random_state=42)
+        # Ograniczenie zbioru danych do losowego podzbioru (np. 1% oryginalnych danych)
+        df_sample = df_filled.sample(frac=0.01, random_state=42)
 
         # Podział ograniczonego zestawu danych na część do treningu i testowania modelu
         x = df_sample.drop('Complaint Type', axis=1)  # Cechy (bez kolumny 'Complaint Type')
@@ -104,7 +100,6 @@ class ComplaintsClassifier:
         dt_y_pred = dt_model.predict(self.X_test)
         dt_accuracy = accuracy_score(self.y_test, dt_y_pred)
         print(f"\nDokładność modelu drzewa decyzyjnego: {round(dt_accuracy * 100, 1)}")
-        self.generate_plot_results_districts(dt_y_pred, 'decision_tree')
         self.generate_plot_results_city(dt_y_pred, 'decision_tree')
         return dt_model, dt_y_pred
 
@@ -115,7 +110,6 @@ class ComplaintsClassifier:
         lr_y_pred = lr_model.predict(self.X_test_scaled)
         lr_accuracy = accuracy_score(self.y_test, lr_y_pred)
         print(f"Dokładność modelu regresji logistycznej: {round(lr_accuracy * 100, 1)}")
-        self.generate_plot_results_districts(lr_y_pred, 'logistic_regression')
         self.generate_plot_results_city(lr_y_pred, 'logistic_regression')
         return lr_model, lr_y_pred
 
@@ -126,38 +120,8 @@ class ComplaintsClassifier:
         svm_y_pred = svm_model.predict(self.X_test_scaled)
         svm_accuracy = accuracy_score(self.y_test, svm_y_pred)
         print(f"Dokładność modelu SVM: {round(svm_accuracy * 100, 1)}")
-        self.generate_plot_results_districts(svm_y_pred, 'svc')
         self.generate_plot_results_city(svm_y_pred, 'svc')
         return svm_model, svm_y_pred
-
-    def generate_plot_results_districts(self, y_pred, model):
-        # Zamiana zakodowanych wartości na oryginalne etykiety
-        dt_y_pred_labels = self.le_complaint.inverse_transform(y_pred)
-        x_test_borough_labels = self.le_borough.inverse_transform(self.X_test['Borough'])
-
-        # Utwórz DataFrame do wizualizacji
-        results_df = pd.DataFrame({'Borough': x_test_borough_labels, 'Predicted Complaint': dt_y_pred_labels})
-
-        # Usuwanie wierszy z 'Unspecified' w kolumnie 'Borough'
-        results_df = results_df[results_df['Borough'] != 'Unspecified']
-
-        # Agregacja danych
-        results_counts = results_df.value_counts().rename('counts').reset_index()
-        results_counts['Percentage'] = 100 * results_counts['counts'] / results_counts.groupby('Borough')[
-            'counts'].transform('sum')
-
-        # Wizualizacja wyników - zmiana orientacji na poziomą
-        plt.figure(figsize=(20, 12))  # Dodatkowe zwiększenie rozmiaru wykresu
-        sns.barplot(y='Borough', x='Percentage', hue='Predicted Complaint', data=results_counts)
-        plt.yticks(rotation=0)
-        plt.title('Procentowy rozkład przewidywanych problemów w dzielnicach - ' + model)
-        plt.xlabel('Procent')
-        plt.ylabel('Dzielnica')
-        plt.legend(title='Przewidywany problem', bbox_to_anchor=(1.0, 1.0), loc='upper left')
-
-        # Użycie constrained_layout zamiast tight_layout
-        plt.subplots_adjust(right=0.8)  # Dostosowanie marginesu dla legendy
-        plt.savefig(model + '_districts_results.png', bbox_inches='tight')
 
     def generate_plot_results_city(self, y_pred, model):
         # Przeprowadzenie predykcji na całym zestawie danych
@@ -213,35 +177,9 @@ class ComplaintsClassifier:
         fig.write_html('advanced_plot_results_' + type + '.html')  # Zapisanie wykresu jako interaktywny plik HTML
 
     # Model ARIMA (Autoregressive Integrated Moving Average) jest modelem statystycznym
-    # wykorzystywanym do analizy i prognozowania szeregów czasowych. Skrót ARIMA oznacza
-    # Autoregressive Integrated Moving Average, co opisuje jego trzy główne składniki:
-    #
-    # 1. Autoregresja (AR): Model opiera się na liniowej zależności pomiędzy wartościami
-    #    historycznymi w szeregu czasowym. Składa się z kombinacji ważonych wcześniejszych
-    #    wartości, w których obecna wartość szeregu jest liniowo zależna od poprzednich.
-    #
-    # 2. Średnia ruchoma (MA): Model ten uwzględnia błędy modelowania, które są wynikiem
-    #    średniej wartości z szeregu czasowego z wyznaczoną wagą dla pewnej liczby poprzednich
-    #    błędów w modelowaniu.
-    #
-    # 3. Integracja (I): Oznacza różnicowanie danych, co jest często używane do
-    #    zniwelowania trendów i sezonowości w szeregach czasowych. Jest to etap, w którym
-    #    różnice między kolejnymi obserwacjami są obliczane w celu sprawienia, aby dane
-    #    były bardziej stacjonarne (stałe statystycznie).
-    #
-    # Parametry ARIMA (p, d, q) to:
-    # - p: stopień autoregresji (liczba wcześniejszych wartości)
-    # - d: stopień różnicowania (zniwelowanie sezonowości lub trendów)
-    # - q: stopień średniej ruchomej (liczba poprzednich błędów modelowania)
-    #
-    # Model ARIMA w Pythonie jest dostępny w bibliotece statsmodels. Wartości parametrów
-    # można dostosować do konkretnego szeregu czasowego, aby uzyskać optymalne wyniki
-    # prognozowania.
-    #
-    # W przykładowym kodzie, model ARIMA jest dopasowywany do szeregu czasowego wygenerowanego
-    # z przewidywanych wartości zgłoszeń. Następnie prognozowane są kolejne 30 dni na podstawie
-    # wcześniejszych danych. Wynikiem jest wykres prezentujący oryginalne dane oraz prognozę
-    # dla przyszłych okresów.
+    # wykorzystywanym do analizy i prognozowania szeregów czasowych.
+    # W moim kodzie, model ARIMA jest dopasowywany do szeregu czasowego wygenerowanego
+    # z przewidywanych wartości zgłoszeń.
     def time_series_decomposition_and_forecast(self, y_pred, model_type):
         # Przygotowanie DataFrame z przewidywaniami i ich datami
         pred_df = pd.DataFrame({'Predicted': y_pred}, index=self.X_test.index)
@@ -307,16 +245,19 @@ class ComplaintsClassifier:
         forecast_fig.write_html(f'arima_forecast_{model_type}.html')
 
     def complaints_per_district_yearly(self):
+        # Konwertowanie kolumny 'Created Date' na typ daty
         self.df['Created Date'] = pd.to_datetime(self.df['Created Date'])
+
+        # Tworzenie kolumny 'Year' na podstawie roku z kolumny 'Created Date'
         self.df['Year'] = self.df['Created Date'].dt.year
 
-        # Grouping by 'Year' and 'Borough' to get counts
+        # Grupowanie po 'Year' i 'Borough' dla uzyskania liczby skarg
         complaints_by_year_and_district = self.df.groupby(['Year', 'Borough']).size().reset_index(name='Complaints')
 
-        # Calculate the total complaints for each year to get a rating
+        # Obliczenie łącznej liczby skarg dla każdego roku w celu wyznaczenia oceny
         total_complaints_per_year = complaints_by_year_and_district.groupby('Year')['Complaints'].sum()
 
-        # Calculate the rating for each district in each year
+        # Wyznaczenie oceny dla każdej dzielnicy w każdym roku
         complaints_by_year_and_district['Rating'] = complaints_by_year_and_district.apply(
             lambda x: x['Complaints'] / total_complaints_per_year[x['Year']] * 100, axis=1
         )
@@ -324,14 +265,18 @@ class ComplaintsClassifier:
         return complaints_by_year_and_district
 
     def save_complaints_per_district_yearly_to_html(self, complaints_per_district_yearly):
+        # Tworzenie wykresu słupkowego za pomocą biblioteki Plotly Express
         fig = px.bar(complaints_per_district_yearly,
                      x='Year',
                      y='Rating',
                      color='Borough',
-                     labels={'Year': 'Year', 'Rating': 'Rating', 'Borough': 'Borough'},
-                     title='Complaints Rating per District by Year')
+                     labels={'Year': 'Rok', 'Rating': 'Ocena', 'Borough': 'Dzielnica'},
+                     title='Ocena Skarg na Dzielnice w Poszczególnych Latach')
 
+        # Konfiguracja układu wykresu
         fig.update_layout(barmode='group')
+
+        # Zapis wykresu do pliku HTML
         fig.write_html('complaints_per_district_yearly.html')
 
 
@@ -341,24 +286,24 @@ if __name__ == "__main__":
 
     # Korzystamy z metod
     classifier.preprocess_data()
-    # classifier.generate_plot_missing_data()
-    # classifier.prepare_data_for_algorithms()
+    classifier.generate_plot_missing_data()
+    classifier.prepare_data_for_algorithms()
 
     # Przeliczenie ratingu skarg dla każdej dzielnicy z rozbiciem na lata
     complaints_per_district_yearly = classifier.complaints_per_district_yearly()
     # Zapisanie wyników do pliku HTML
     classifier.save_complaints_per_district_yearly_to_html(complaints_per_district_yearly)
 
-    # dt_model, dt_y_pred = classifier.decision_tree()
-    # classifier.generate_advanced_plot_results(dt_model, dt_y_pred, 'decision_tree')
-    # classifier.time_series_decomposition_and_forecast(dt_y_pred, 'decision_tree')
-    #
-    # lr_model, lr_y_pred = classifier.logistic_regression()
-    # classifier.generate_advanced_plot_results(lr_model, lr_y_pred, 'logistic_regression')
-    # classifier.time_series_decomposition_and_forecast(lr_y_pred, 'logistic_regression')
-    #
-    # svm_model, svm_y_pred = classifier.svc()
-    # classifier.generate_advanced_plot_results(svm_model, svm_y_pred, 'svc')
-    # classifier.time_series_decomposition_and_forecast(svm_y_pred, 'svc')
+    dt_model, dt_y_pred = classifier.decision_tree()
+    classifier.generate_advanced_plot_results(dt_model, dt_y_pred, 'decision_tree')
+    classifier.time_series_decomposition_and_forecast(dt_y_pred, 'decision_tree')
+
+    lr_model, lr_y_pred = classifier.logistic_regression()
+    classifier.generate_advanced_plot_results(lr_model, lr_y_pred, 'logistic_regression')
+    classifier.time_series_decomposition_and_forecast(lr_y_pred, 'logistic_regression')
+
+    svm_model, svm_y_pred = classifier.svc()
+    classifier.generate_advanced_plot_results(svm_model, svm_y_pred, 'svc')
+    classifier.time_series_decomposition_and_forecast(svm_y_pred, 'svc')
 
 
