@@ -2,6 +2,7 @@ import warnings
 
 import matplotlib
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
@@ -15,6 +16,9 @@ from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.seasonal import seasonal_decompose
+from sklearn.metrics import roc_curve, auc
+import shap
+
 
 # Ignorowanie wszystkich ostrzeżeń użytkownika
 warnings.filterwarnings('ignore', category=UserWarning)
@@ -193,6 +197,7 @@ class ComplaintsClassifier:
         return results_df
 
     def generate_advanced_plot_results(self, model, y_pred, type):
+        # Generowanie ramki danych z wynikami modelu
         results_df = self.generate_results_dataframe(model, y_pred)
 
         # Obliczanie procentowej liczby zgłoszeń dla każdej kombinacji Borough i Predicted Complaint
@@ -200,12 +205,43 @@ class ComplaintsClassifier:
         borough_total = results_count.groupby('Borough')['Counts'].transform('sum')
         results_count['Percentage'] = (results_count['Counts'] / borough_total) * 100
 
+        # Tworzenie wykresu słupkowego z użyciem biblioteki Plotly Express
         fig = px.bar(results_count, x='Borough', y='Percentage', color='Predicted Complaint', barmode='group',
                      labels={'Percentage': 'Procent zgłoszeń'})
         fig.update_layout(title='Rozkład przewidywanych problemów w dzielnicach', xaxis_title='Dzielnica',
                           yaxis_title='Procent zgłoszeń')
         fig.write_html('advanced_plot_results_' + type + '.html')  # Zapisanie wykresu jako interaktywny plik HTML
 
+    # Model ARIMA (Autoregressive Integrated Moving Average) jest modelem statystycznym
+    # wykorzystywanym do analizy i prognozowania szeregów czasowych. Skrót ARIMA oznacza
+    # Autoregressive Integrated Moving Average, co opisuje jego trzy główne składniki:
+    #
+    # 1. Autoregresja (AR): Model opiera się na liniowej zależności pomiędzy wartościami
+    #    historycznymi w szeregu czasowym. Składa się z kombinacji ważonych wcześniejszych
+    #    wartości, w których obecna wartość szeregu jest liniowo zależna od poprzednich.
+    #
+    # 2. Średnia ruchoma (MA): Model ten uwzględnia błędy modelowania, które są wynikiem
+    #    średniej wartości z szeregu czasowego z wyznaczoną wagą dla pewnej liczby poprzednich
+    #    błędów w modelowaniu.
+    #
+    # 3. Integracja (I): Oznacza różnicowanie danych, co jest często używane do
+    #    zniwelowania trendów i sezonowości w szeregach czasowych. Jest to etap, w którym
+    #    różnice między kolejnymi obserwacjami są obliczane w celu sprawienia, aby dane
+    #    były bardziej stacjonarne (stałe statystycznie).
+    #
+    # Parametry ARIMA (p, d, q) to:
+    # - p: stopień autoregresji (liczba wcześniejszych wartości)
+    # - d: stopień różnicowania (zniwelowanie sezonowości lub trendów)
+    # - q: stopień średniej ruchomej (liczba poprzednich błędów modelowania)
+    #
+    # Model ARIMA w Pythonie jest dostępny w bibliotece statsmodels. Wartości parametrów
+    # można dostosować do konkretnego szeregu czasowego, aby uzyskać optymalne wyniki
+    # prognozowania.
+    #
+    # W przykładowym kodzie, model ARIMA jest dopasowywany do szeregu czasowego wygenerowanego
+    # z przewidywanych wartości zgłoszeń. Następnie prognozowane są kolejne 30 dni na podstawie
+    # wcześniejszych danych. Wynikiem jest wykres prezentujący oryginalne dane oraz prognozę
+    # dla przyszłych okresów.
     def time_series_decomposition_and_forecast(self, y_pred, model_type):
         # Przygotowanie DataFrame z przewidywaniami i ich datami
         pred_df = pd.DataFrame({'Predicted': y_pred}, index=self.X_test.index)
@@ -224,29 +260,29 @@ class ComplaintsClassifier:
         # Dekompozycja serii czasowej
         decomposition = seasonal_decompose(daily_predicted_counts.dropna(), model='additive')
 
-        # Create subplots for decomposition
+        # Tworzenie subwykresów dla dekompozycji
         fig = make_subplots(rows=3, cols=1, shared_xaxes=True, vertical_spacing=0.02,
                             subplot_titles=(
-                            f'Trend - {model_type}', f'Sezonowość - {model_type}', f'Reszta - {model_type}'))
+                                f'Trend - {model_type}', f'Sezonowość - {model_type}', f'Reszta - {model_type}'))
 
-        # Trend component plot
+        # Wykres składowej Trend
         fig.add_trace(go.Scatter(x=decomposition.trend.index, y=decomposition.trend, mode='lines', name='Trend'), row=1,
                       col=1)
 
-        # Seasonal component plot
+        # Wykres składowej Seasonal
         fig.add_trace(
             go.Scatter(x=decomposition.seasonal.index, y=decomposition.seasonal, mode='lines', name='Seasonal'), row=2,
             col=1)
 
-        # Residual component plot
+        # Wykres składowej Residual
         fig.add_trace(go.Scatter(x=decomposition.resid.index, y=decomposition.resid, mode='lines', name='Residual'),
                       row=3, col=1)
 
-        # Update layout
+        # Aktualizacja układu wykresu
         fig.update_layout(height=800, title_text=f"Time Series Decomposition - {model_type}")
         fig.update_xaxes(tickangle=-45, nticks=20)
 
-        # Save to HTML
+        # Zapis do pliku HTML
         fig.write_html(f'decomposition_{model_type}.html')
 
         # Prognoza ARIMA
@@ -255,7 +291,7 @@ class ComplaintsClassifier:
         forecast = model_fit.forecast(steps=30)
         forecast_dates = pd.date_range(start=daily_predicted_counts.dropna().index[-1], periods=31, freq='D')[1:]
 
-        # Plot ARIMA forecast
+        # Wykres prognozy ARIMA
         forecast_fig = go.Figure()
         forecast_fig.add_trace(
             go.Scatter(x=daily_predicted_counts.dropna().index[-60:], y=daily_predicted_counts.dropna()[-60:],
@@ -267,8 +303,36 @@ class ComplaintsClassifier:
                                    yaxis_title='Predicted Counts')
         forecast_fig.update_xaxes(tickangle=-45, nticks=20)
 
-        # Save forecast plot to HTML
+        # Zapis wykresu prognozy do pliku HTML
         forecast_fig.write_html(f'arima_forecast_{model_type}.html')
+
+    def complaints_per_district_yearly(self):
+        self.df['Created Date'] = pd.to_datetime(self.df['Created Date'])
+        self.df['Year'] = self.df['Created Date'].dt.year
+
+        # Grouping by 'Year' and 'Borough' to get counts
+        complaints_by_year_and_district = self.df.groupby(['Year', 'Borough']).size().reset_index(name='Complaints')
+
+        # Calculate the total complaints for each year to get a rating
+        total_complaints_per_year = complaints_by_year_and_district.groupby('Year')['Complaints'].sum()
+
+        # Calculate the rating for each district in each year
+        complaints_by_year_and_district['Rating'] = complaints_by_year_and_district.apply(
+            lambda x: x['Complaints'] / total_complaints_per_year[x['Year']] * 100, axis=1
+        )
+
+        return complaints_by_year_and_district
+
+    def save_complaints_per_district_yearly_to_html(self, complaints_per_district_yearly):
+        fig = px.bar(complaints_per_district_yearly,
+                     x='Year',
+                     y='Rating',
+                     color='Borough',
+                     labels={'Year': 'Year', 'Rating': 'Rating', 'Borough': 'Borough'},
+                     title='Complaints Rating per District by Year')
+
+        fig.update_layout(barmode='group')
+        fig.write_html('complaints_per_district_yearly.html')
 
 
 if __name__ == "__main__":
@@ -277,17 +341,24 @@ if __name__ == "__main__":
 
     # Korzystamy z metod
     classifier.preprocess_data()
-    classifier.generate_plot_missing_data()
-    classifier.prepare_data_for_algorithms()
+    # classifier.generate_plot_missing_data()
+    # classifier.prepare_data_for_algorithms()
 
-    dt_model, dt_y_pred = classifier.decision_tree()
-    classifier.generate_advanced_plot_results(dt_model, dt_y_pred, 'decision_tree')
-    classifier.time_series_decomposition_and_forecast(dt_y_pred, 'decision_tree')
+    # Przeliczenie ratingu skarg dla każdej dzielnicy z rozbiciem na lata
+    complaints_per_district_yearly = classifier.complaints_per_district_yearly()
+    # Zapisanie wyników do pliku HTML
+    classifier.save_complaints_per_district_yearly_to_html(complaints_per_district_yearly)
 
-    lr_model, lr_y_pred = classifier.logistic_regression()
-    classifier.generate_advanced_plot_results(lr_model, lr_y_pred, 'logistic_regression')
-    classifier.time_series_decomposition_and_forecast(lr_y_pred, 'logistic_regression')
+    # dt_model, dt_y_pred = classifier.decision_tree()
+    # classifier.generate_advanced_plot_results(dt_model, dt_y_pred, 'decision_tree')
+    # classifier.time_series_decomposition_and_forecast(dt_y_pred, 'decision_tree')
+    #
+    # lr_model, lr_y_pred = classifier.logistic_regression()
+    # classifier.generate_advanced_plot_results(lr_model, lr_y_pred, 'logistic_regression')
+    # classifier.time_series_decomposition_and_forecast(lr_y_pred, 'logistic_regression')
+    #
+    # svm_model, svm_y_pred = classifier.svc()
+    # classifier.generate_advanced_plot_results(svm_model, svm_y_pred, 'svc')
+    # classifier.time_series_decomposition_and_forecast(svm_y_pred, 'svc')
 
-    svm_model, svm_y_pred = classifier.svc()
-    classifier.generate_advanced_plot_results(svm_model, svm_y_pred, 'svc')
-    classifier.time_series_decomposition_and_forecast(svm_y_pred, 'svc')
+
