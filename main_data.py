@@ -71,8 +71,8 @@ class ComplaintsClassifier:
             if df_filled[column].dtype == 'object':
                 df_filled[column] = self.le.fit_transform(df_filled[column].astype(str))
 
-        # Ograniczenie zbioru danych do losowego podzbioru (np. 1% oryginalnych danych)
-        df_sample = df_filled.sample(frac=0.0001, random_state=42)
+        # Ograniczenie zbioru danych do losowego podzbioru (np. 100% oryginalnych danych)
+        df_sample = df_filled.sample(frac=1.0, random_state=42)
 
         # Podział ograniczonego zestawu danych na część do treningu i testowania modelu
         x = df_sample.drop('Complaint Type', axis=1)  # Cechy (bez kolumny 'Complaint Type')
@@ -303,6 +303,28 @@ class ComplaintsClassifier:
         # Zapisanie ocen skarg do pliku CSV
         top_5_per_district.to_csv('top_5_complaints_per_district.csv', index=False)
 
+    def algorithms_data_to_csv(self):
+        # Saving data using models and pred variables to CSV
+        models = [('Decision Tree', dt_model, dt_y_pred),
+                  ('Logistic Regression', lr_model, lr_y_pred),
+                  ('SVM', svm_model, svm_y_pred)]
+        results_df = pd.DataFrame(columns=['Model', 'Borough', 'Predicted Complaint'])
+        for model_name, model, pred in models[:3]:
+            if pred is not None:
+                results = classifier.generate_results_dataframe(model, pred)
+                if 'Borough' in results and results['Borough'].dtype == 'object':
+                    results['Model'] = model_name
+                    results_df = pd.concat([results_df, results], ignore_index=True)
+                else:
+                    print(f"Skipping '{model_name}' - 'Borough' inverse transform due to inconsistent data type.")
+        if 'Borough' in results_df:
+            try:
+                results_df['Borough'] = classifier.le_borough.inverse_transform(results_df['Borough'])
+            except Exception as e:
+                print(f"Error: {e}. Unable to perform 'Borough' inverse transform.")
+        results_df = results_df.drop_duplicates().groupby('Predicted Complaint').head(10)
+        results_df.to_csv('results_from_models_with_model.csv', index=False)
+
 
 if __name__ == "__main__":
     # Tworzymy instancję ComplaintsClassifier
@@ -332,27 +354,4 @@ if __name__ == "__main__":
 
     classifier.save_all_to_csv(classifier.complaints_per_district_yearly())
 
-    # Saving data using models and pred variables to CSV
-    models = [('Decision Tree', dt_model, dt_y_pred),
-              ('Logistic Regression', lr_model, lr_y_pred),
-              ('SVM', svm_model, svm_y_pred)]
-
-    results_df = pd.DataFrame(columns=['Model', 'Borough', 'Predicted Complaint'])
-
-    for model_name, model, pred in models[:3]:
-        if pred is not None:
-            results = classifier.generate_results_dataframe(model, pred)
-            if 'Borough' in results and results['Borough'].dtype == 'object':
-                results['Model'] = model_name
-                results_df = pd.concat([results_df, results], ignore_index=True)
-            else:
-                print(f"Skipping '{model_name}' - 'Borough' inverse transform due to inconsistent data type.")
-
-    if 'Borough' in results_df:
-        try:
-            results_df['Borough'] = classifier.le_borough.inverse_transform(results_df['Borough'])
-        except Exception as e:
-            print(f"Error: {e}. Unable to perform 'Borough' inverse transform.")
-
-    results_df = results_df.drop_duplicates().groupby('Predicted Complaint').head(10)
-    results_df.to_csv('results_from_models_with_model.csv', index=False)
+    classifier.algorithms_data_to_csv()
