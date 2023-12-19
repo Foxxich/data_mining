@@ -1,61 +1,1352 @@
 Model,Borough,Predicted Complaint
-Decision Tree,QUEENS,Non-Emergency Police Matter
-Decision Tree,QUEENS,DSNY Internal
-Decision Tree,MANHATTAN,Smoking
-Decision Tree,MANHATTAN,Mobile Food Vendor
-Decision Tree,MANHATTAN,Illegal Posting
-Decision Tree,BROOKLYN,Illegal Posting
-Decision Tree,QUEENS,Noise - Street/Sidewalk
-Decision Tree,BROOKLYN,PLUMBING
-Decision Tree,BROOKLYN,Adopt-A-Basket
-Decision Tree,STATEN ISLAND,Illegal Fireworks
-Decision Tree,BROOKLYN,Non-Emergency Police Matter
-Decision Tree,STATEN ISLAND,Street Sign - Damaged
+Decision Tree,MANHATTAN,Illegal Fireworks
+Decision Tree,MANHATTAN,Street Sign - Damaged
+Decision Tree,BROOKLYN,Window Guard
+Decision Tree,QUEENS,Illegal Posting
+Decision Tree,STATEN ISLAND,Boilers
+Decision Tree,STATEN ISLAND,Noise - House of Worship
+Decision Tree,QUEENS,FLOORING/STAIRS
 Decision Tree,BROOKLYN,Noise - Street/Sidewalk
-Decision Tree,BROOKLYN,Harboring Bees/Wasps
-Decision Tree,STATEN ISLAND,Noise - Helicopter
-Decision Tree,BROOKLYN,Asbestos
-Decision Tree,Unspecified,Street Light Condition
+Decision Tree,QUEENS,Harboring Bees/Wasps
+Decision Tree,QUEENS,PLUMBING
+Decision Tree,MANHATTAN,Noise - Street/Sidewalk
+Decision Tree,STATEN ISLAND,Disorderly Youth
+Decision Tree,BROOKLYN,Noise - Helicopter
+Decision Tree,MANHATTAN,Dirty Condition
+Decision Tree,BROOKLYN,Boilers
+Decision Tree,STATEN ISLAND,Mobile Food Vendor
+Decision Tree,MANHATTAN,Window Guard
+Decision Tree,MANHATTAN,Illegal Posting
+Decision Tree,STATEN ISLAND,Missed Collection
+Decision Tree,MANHATTAN,Building Condition
+Decision Tree,MANHATTAN,Harboring Bees/Wasps
+Decision Tree,STATEN ISLAND,SAFETY
+Decision Tree,MANHATTAN,Unleashed Dog
+Decision Tree,QUEENS,Unleashed Dog
+Decision Tree,STATEN ISLAND,Smoking
+Decision Tree,QUEENS,Noise - Vehicle
+Decision Tree,MANHATTAN,Noise - Commercial
+Decision Tree,QUEENS,Water Conservation
+Decision Tree,BROOKLYN,Graffiti
+Decision Tree,STATEN ISLAND,Noise - Vehicle
+Decision Tree,MANHATTAN,Cranes and Derricks
+Decision Tree,STATEN ISLAND,Street Light Condition
+Decision Tree,MANHATTAN,Street Light Condition
+Decision Tree,BROOKLYN,Water Conservation
+Decision Tree,BROOKLYN,General Construction/Plumbing
+Decision Tree,MANHATTAN,Sidewalk Condition
+Decision Tree,STATEN ISLAND,Noise - Street/Sidewalk
+Decision Tree,Unspecified,Adopt-A-Basket
+Decision Tree,MANHATTAN,Boilers
+Decision Tree,MANHATTAN,SAFETY
+Decision Tree,QUEENS,Noise - Helicopter
+Decision Tree,MANHATTAN,Disorderly Youth
+Decision Tree,QUEENS,Smoking
+Decision Tree,BROOKLYN,Non-Emergency Police Matter
+Decision Tree,BROOKLYN,Day Care
+Decision Tree,BROOKLYN,Street Sign - Damaged
+Decision Tree,MANHATTAN,Overgrown Tree/Branches
+Decision Tree,STATEN ISLAND,General Construction/Plumbing
+Decision Tree,BROOKLYN,Noise - Vehicle
+Decision Tree,QUEENS,Illegal Fireworks
+Decision Tree,MANHATTAN,FLOORING/STAIRS
+Decision Tree,STATEN ISLAND,X-Ray Machine/Equipment
+Decision Tree,MANHATTAN,Noise - Helicopter
+Decision Tree,MANHATTAN,Bus Stop Shelter Complaint
+Decision Tree,BROOKLYN,Panhandling
+Decision Tree,STATEN ISLAND,Illegal Posting
+Decision Tree,STATEN ISLAND,Food Poisoning
 Decision Tree,BROOKLYN,Unleashed Dog
 Decision Tree,MANHATTAN,Noise - Vehicle
-Decision Tree,MANHATTAN,Dirty Condition
+Decision Tree,QUEENS,Panhandling
+Decision Tree,Unspecified,Noise - Street/Sidewalk
+Decision Tree,MANHATTAN,Adopt-A-Basket
+Decision Tree,QUEENS,Lifeguard
+Decision Tree,QUEENS,DEP Highway Condition
+Decision Tree,BROOKLYN,Harboring Bees/Wasps
+Decision Tree,STATEN ISLAND,Abandoned Bike
+Decision Tree,BROOKLYN,Smoking
+Decision Tree,STATEN ISLAND,Non-Emergency Police Matter
+Decision Tree,STATEN ISLAND,Adopt-A-Basket
+Decision Tree,STATEN ISLAND,Retailer Complaint
+Decision Tree,MANHATTAN,Emergency Response Team (ERT)
+Decision Tree,STATEN ISLAND,Oil or Gas Spill
+Decision Tree,STATEN ISLAND,Dumpster Complaint
+Decision Tree,Unspecified,Water Quality
+Decision Tree,MANHATTAN,Water Conservation
+Decision Tree,STATEN ISLAND,Transfer Station Complaint
+Decision Tree,STATEN ISLAND,Harboring Bees/Wasps
+Decision Tree,QUEENS,Non-Emergency Police Matter
+Decision Tree,QUEENS,Missed Collection
+Decision Tree,BROOKLYN,Noise - Commercial
+Decision Tree,STATEN ISLAND,Day Care
+Decision Tree,MANHATTAN,Panhandling
 Decision Tree,MANHATTAN,Ferry Complaint
-Decision Tree,STATEN ISLAND,Illegal Posting
-Decision Tree,STATEN ISLAND,Sanitation Worker or Vehicle Complaint
+Decision Tree,MANHATTAN,Mobile Food Vendor
+Decision Tree,MANHATTAN,Food Poisoning
+Decision Tree,STATEN ISLAND,Borough Office
+Decision Tree,MANHATTAN,Graffiti
+Decision Tree,QUEENS,Cooling Tower
+Decision Tree,STATEN ISLAND,Unleashed Dog
+Decision Tree,STATEN ISLAND,FLOORING/STAIRS
+Decision Tree,STATEN ISLAND,Dirty Condition
+Decision Tree,STATEN ISLAND,Dept of Investigations
+Decision Tree,QUEENS,Noise - House of Worship
+Decision Tree,STATEN ISLAND,Window Guard
+Decision Tree,STATEN ISLAND,Street Sign - Damaged
+Decision Tree,STATEN ISLAND,Bus Stop Shelter Complaint
+Decision Tree,MANHATTAN,Noise
+Decision Tree,MANHATTAN,PAINT/PLASTER
+Decision Tree,STATEN ISLAND,PLUMBING
+Decision Tree,MANHATTAN,Day Care
+Decision Tree,BROOKLYN,Illegal Posting
+Decision Tree,Unspecified,Smoking
+Decision Tree,Unspecified,PAINT/PLASTER
+Decision Tree,QUEENS,Noise - Commercial
+Decision Tree,MANHATTAN,Dead/Dying Tree
+Decision Tree,Unspecified,Missed Collection
+Decision Tree,BROOKLYN,Street Light Condition
+Decision Tree,BROOKLYN,Street Sweeping Complaint
+Decision Tree,STATEN ISLAND,ELEVATOR
+Decision Tree,QUEENS,Noise - Street/Sidewalk
+Decision Tree,BROOKLYN,Disorderly Youth
+Decision Tree,BROOKLYN,Ferry Complaint
+Decision Tree,Unspecified,Window Guard
+Decision Tree,QUEENS,For Hire Vehicle Report
+Decision Tree,STATEN ISLAND,Illegal Parking
+Decision Tree,STATEN ISLAND,Building Condition
+Decision Tree,QUEENS,General Construction/Plumbing
+Decision Tree,QUEENS,Transfer Station Complaint
+Decision Tree,MANHATTAN,Cooling Tower
+Decision Tree,QUEENS,Water System
+Decision Tree,STATEN ISLAND,Sidewalk Condition
+Decision Tree,QUEENS,Electronics Waste Appointment
+Decision Tree,QUEENS,Noise - Residential
+Decision Tree,STATEN ISLAND,Noise - Helicopter
+Decision Tree,BROOKLYN,Borough Office
+Decision Tree,BROOKLYN,PLUMBING
+Decision Tree,BROOKLYN,ELEVATOR
+Decision Tree,STATEN ISLAND,Mold
+Decision Tree,BROOKLYN,Emergency Response Team (ERT)
+Decision Tree,STATEN ISLAND,Illegal Tree Damage
+Decision Tree,QUEENS,Mobile Food Vendor
+Decision Tree,Unspecified,Noise
+Decision Tree,QUEENS,Lot Condition
+Decision Tree,MANHATTAN,Non-Emergency Police Matter
+Decision Tree,QUEENS,Non-Residential Heat
+Decision Tree,STATEN ISLAND,Illegal Fireworks
+Decision Tree,BROOKLYN,Squeegee
+Decision Tree,MANHATTAN,PLUMBING
+Decision Tree,STATEN ISLAND,Graffiti
+Decision Tree,STATEN ISLAND,Highway Sign - Damaged
+Decision Tree,MANHATTAN,Smoking
+Decision Tree,BROOKLYN,Dirty Condition
+Decision Tree,QUEENS,Window Guard
+Decision Tree,BROOKLYN,Abandoned Bike
+Decision Tree,Unspecified,Hazardous Materials
+Decision Tree,QUEENS,Bus Stop Shelter Complaint
+Decision Tree,Unspecified,Retailer Complaint
+Decision Tree,MANHATTAN,ELEVATOR
+Decision Tree,Unspecified,Boilers
+Decision Tree,STATEN ISLAND,Noise
+Decision Tree,STATEN ISLAND,Electronics Waste Appointment
+Decision Tree,Unspecified,Cooling Tower
+Decision Tree,MANHATTAN,Sanitation Worker or Vehicle Complaint
+Decision Tree,QUEENS,Graffiti
+Decision Tree,Unspecified,Illegal Posting
+Decision Tree,STATEN ISLAND,Tattooing
+Decision Tree,MANHATTAN,Transfer Station Complaint
+Decision Tree,,Food Establishment
+Decision Tree,MANHATTAN,Water Quality
+Decision Tree,BROOKLYN,Dead/Dying Tree
+Decision Tree,Unspecified,Drug Activity
+Decision Tree,BROOKLYN,Illegal Fireworks
+Decision Tree,QUEENS,Green Taxi Complaint
+Decision Tree,QUEENS,Pet Shop
+Decision Tree,STATEN ISLAND,Recycling Basket Complaint
+Decision Tree,STATEN ISLAND,Noise - Residential
+Decision Tree,MANHATTAN,Abandoned Bike
+Decision Tree,STATEN ISLAND,Lifeguard
+Decision Tree,QUEENS,Food Poisoning
+Decision Tree,QUEENS,Disorderly Youth
+Decision Tree,Unspecified,Elevator
+Decision Tree,Unspecified,Food Poisoning
+Decision Tree,BROOKLYN,Non-Residential Heat
+Decision Tree,STATEN ISLAND,PAINT/PLASTER
+Decision Tree,MANHATTAN,Incorrect Data
+Decision Tree,QUEENS,Sidewalk Condition
+Decision Tree,QUEENS,Dumpster Complaint
+Decision Tree,STATEN ISLAND,Animal Facility - No Permit
+Decision Tree,QUEENS,Recycling Basket Complaint
+Decision Tree,MANHATTAN,Missed Collection
+Decision Tree,BROOKLYN,Adopt-A-Basket
+Decision Tree,Unspecified,Disorderly Youth
+Decision Tree,QUEENS,Animal Facility - No Permit
+Decision Tree,STATEN ISLAND,Noise - Commercial
+Decision Tree,BROOKLYN,Lifeguard
+Decision Tree,QUEENS,Noise
+Decision Tree,STATEN ISLAND,Incorrect Data
+Decision Tree,QUEENS,Taxi Compliment
+Decision Tree,BROOKLYN,Cooling Tower
+Decision Tree,BROOKLYN,Drinking Water
+Decision Tree,QUEENS,Building Condition
+Decision Tree,MANHATTAN,Animal-Abuse
+Decision Tree,Unspecified,Dirty Condition
+Decision Tree,MANHATTAN,Tattooing
+Decision Tree,STATEN ISLAND,Water Conservation
+Decision Tree,STATEN ISLAND,DEP Highway Condition
+Decision Tree,STATEN ISLAND,Squeegee
+Decision Tree,QUEENS,Street Light Condition
+Decision Tree,STATEN ISLAND,Panhandling
+Decision Tree,MANHATTAN,Oil or Gas Spill
+Decision Tree,STATEN ISLAND,Bus Stop Shelter Placement
+Decision Tree,STATEN ISLAND,Non-Residential Heat
+Decision Tree,Unspecified,Unleashed Dog
+Decision Tree,Unspecified,Green Taxi Complaint
+Decision Tree,MANHATTAN,DSNY Internal
+Decision Tree,Unspecified,Panhandling
+Decision Tree,BROOKLYN,DSNY Internal
+Decision Tree,Unspecified,Illegal Parking
+Decision Tree,MANHATTAN,Lost Property
+Decision Tree,BROOKLYN,Transfer Station Complaint
+Decision Tree,STATEN ISLAND,Cooling Tower
+Decision Tree,BROOKLYN,Illegal Parking
+Decision Tree,Unspecified,Squeegee
+Decision Tree,QUEENS,Street Sign - Damaged
+Decision Tree,Unspecified,General Construction/Plumbing
+Decision Tree,Unspecified,Sidewalk Condition
+Decision Tree,STATEN ISLAND,Ferry Complaint
+Decision Tree,STATEN ISLAND,Water Quality
+Decision Tree,BROOKLYN,Highway Condition
+Decision Tree,MANHATTAN,Noise - Residential
+Decision Tree,MANHATTAN,Unsanitary Animal Facility
+Decision Tree,MANHATTAN,General Construction/Plumbing
+Decision Tree,MANHATTAN,Root/Sewer/Sidewalk Condition
+Decision Tree,QUEENS,UNSANITARY CONDITION
+Decision Tree,BROOKLYN,Mobile Food Vendor
+Decision Tree,MANHATTAN,E-Scooter
+Decision Tree,STATEN ISLAND,Drinking Water
+Decision Tree,Unspecified,Street Sign - Damaged
+Decision Tree,MANHATTAN,Lifeguard
+Decision Tree,BROOKLYN,Missed Collection
+Decision Tree,QUEENS,ELEVATOR
+Decision Tree,BROOKLYN,Electrical
+Decision Tree,Unspecified,Poison Ivy
+Decision Tree,STATEN ISLAND,Poison Ivy
+Decision Tree,Unspecified,DSNY Internal
+Decision Tree,MANHATTAN,Drinking Water
+Decision Tree,QUEENS,Adopt-A-Basket
+Decision Tree,QUEENS,DSNY Internal
+Decision Tree,STATEN ISLAND,Street Sign - Dangling
+Decision Tree,MANHATTAN,Non-Residential Heat
+Decision Tree,Unspecified,Street Light Condition
+Decision Tree,Unspecified,Noise - Vehicle
+Decision Tree,BROOKLYN,Retailer Complaint
+Decision Tree,MANHATTAN,Green Taxi Complaint
+Decision Tree,QUEENS,Maintenance or Facility
+Decision Tree,QUEENS,Ferry Complaint
+Decision Tree,STATEN ISLAND,Asbestos
+Decision Tree,Unspecified,Illegal Fireworks
+Decision Tree,BROOKLYN,Street Sign - Dangling
+Decision Tree,STATEN ISLAND,Unsanitary Animal Facility
+Decision Tree,Unspecified,PLUMBING
+Decision Tree,MANHATTAN,For Hire Vehicle Report
+Decision Tree,QUEENS,Emergency Response Team (ERT)
+Decision Tree,BROOKLYN,Green Taxi Complaint
+Decision Tree,BROOKLYN,Tattooing
+Decision Tree,Unspecified,Maintenance or Facility
+Decision Tree,BROOKLYN,Poison Ivy
+Decision Tree,MANHATTAN,Street Sign - Dangling
+Decision Tree,QUEENS,Asbestos
+Decision Tree,QUEENS,Dirty Condition
+Decision Tree,QUEENS,Street Sign - Dangling
+Decision Tree,,Building Condition
+Decision Tree,STATEN ISLAND,Dead/Dying Tree
+Decision Tree,BROOKLYN,Noise - Residential
+Decision Tree,Unspecified,X-Ray Machine/Equipment
 Decision Tree,MANHATTAN,Asbestos
-Decision Tree,QUEENS,Illegal Posting
-Logistic Regression,QUEENS,Non-Emergency Police Matter
-Logistic Regression,QUEENS,Unleashed Dog
-Logistic Regression,MANHATTAN,Ferry Complaint
-Logistic Regression,MANHATTAN,Street Light Condition
-Logistic Regression,MANHATTAN,Illegal Posting
+Decision Tree,STATEN ISLAND,DSNY Internal
+Decision Tree,QUEENS,Sanitation Worker or Vehicle Complaint
+Decision Tree,QUEENS,Illegal Animal Kept as Pet
+Decision Tree,Unspecified,Day Care
+Decision Tree,STATEN ISLAND,Traffic
+Decision Tree,QUEENS,Abandoned Bike
+Decision Tree,BROOKLYN,FLOORING/STAIRS
+Decision Tree,BROOKLYN,Sidewalk Condition
+Decision Tree,QUEENS,Animal-Abuse
+Decision Tree,MANHATTAN,Electrical
+Decision Tree,MANHATTAN,Dept of Investigations
+Decision Tree,MANHATTAN,Recycling Basket Complaint
+Decision Tree,,Transfer Station Complaint
+Decision Tree,BROOKLYN,PAINT/PLASTER
+Decision Tree,MANHATTAN,Scaffold Safety
+Decision Tree,QUEENS,Construction Lead Dust
+Decision Tree,QUEENS,Squeegee
+Decision Tree,Unspecified,Mobile Food Vendor
+Decision Tree,QUEENS,Retailer Complaint
+Decision Tree,MANHATTAN,Street Condition
+Decision Tree,MANHATTAN,Blocked Driveway
+Decision Tree,BROOKLYN,Incorrect Data
+Decision Tree,QUEENS,Boilers
+Decision Tree,BROOKLYN,Recycling Basket Complaint
+Decision Tree,BROOKLYN,ELECTRIC
+Decision Tree,BROOKLYN,WATER LEAK
+Decision Tree,STATEN ISLAND,Illegal Animal Kept as Pet
+Decision Tree,MANHATTAN,DEP Highway Condition
+Decision Tree,QUEENS,E-Scooter
+Decision Tree,MANHATTAN,Encampment
+Decision Tree,Unspecified,ELEVATOR
+Decision Tree,STATEN ISLAND,Green Taxi Complaint
+Decision Tree,Unspecified,Taxi Compliment
+Decision Tree,Unspecified,Non-Residential Heat
+Decision Tree,Unspecified,Oil or Gas Spill
+Decision Tree,STATEN ISLAND,Street Sweeping Complaint
+Decision Tree,QUEENS,Illegal Parking
+Decision Tree,MANHATTAN,BEST/Site Safety
+Decision Tree,QUEENS,Borough Office
+Decision Tree,QUEENS,Oil or Gas Spill
+Decision Tree,MANHATTAN,Squeegee
+Decision Tree,STATEN ISLAND,Traffic Signal Condition
+Decision Tree,QUEENS,Mold
+Decision Tree,MANHATTAN,Animal Facility - No Permit
+Decision Tree,QUEENS,Beach/Pool/Sauna Complaint
+Decision Tree,QUEENS,Street Sweeping Complaint
+Decision Tree,BROOKLYN,Pet Shop
+Decision Tree,STATEN ISLAND,Water System
+Decision Tree,MANHATTAN,Sewer
+Decision Tree,STATEN ISLAND,Animal-Abuse
+Decision Tree,QUEENS,Snow or Ice
+Decision Tree,BROOKLYN,Electronics Waste Appointment
+Decision Tree,STATEN ISLAND,ZTESTINT
+Decision Tree,BROOKLYN,Traffic
+Decision Tree,MANHATTAN,Residential Disposal Complaint
+Decision Tree,MANHATTAN,Mold
+Decision Tree,MANHATTAN,Pet Shop
+Decision Tree,MANHATTAN,Construction Lead Dust
+Decision Tree,MANHATTAN,Noise - House of Worship
+Decision Tree,BROOKLYN,Oil or Gas Spill
+Decision Tree,MANHATTAN,Traffic Signal Condition
+Decision Tree,QUEENS,Tattooing
+Decision Tree,BROOKLYN,For Hire Vehicle Report
+Decision Tree,,Ferry Inquiry
+Decision Tree,Unspecified,SAFETY
+Decision Tree,MANHATTAN,Illegal Parking
+Decision Tree,STATEN ISLAND,Street Sign - Missing
+Decision Tree,Unspecified,Transfer Station Complaint
+Decision Tree,Unspecified,Electronics Waste Appointment
+Decision Tree,MANHATTAN,Maintenance or Facility
+Decision Tree,STATEN ISLAND,Lost Property
+Decision Tree,MANHATTAN,Dumpster Complaint
+Decision Tree,STATEN ISLAND,Emergency Response Team (ERT)
+Decision Tree,Unspecified,Illegal Tree Damage
+Decision Tree,QUEENS,Water Quality
+Decision Tree,MANHATTAN,Taxi Complaint
+Decision Tree,QUEENS,Root/Sewer/Sidewalk Condition
+Decision Tree,STATEN ISLAND,Encampment
+Decision Tree,QUEENS,Highway Sign - Damaged
+Decision Tree,Unspecified,Graffiti
+Decision Tree,Unspecified,Harboring Bees/Wasps
+Decision Tree,STATEN ISLAND,Vaccine Mandate Non-Compliance
+Decision Tree,MANHATTAN,Animal in a Park
+Decision Tree,STATEN ISLAND,Sanitation Worker or Vehicle Complaint
+Decision Tree,QUEENS,Residential Disposal Complaint
+Decision Tree,QUEENS,Lost Property
+Decision Tree,MANHATTAN,Street Sweeping Complaint
+Decision Tree,BROOKLYN,Water Quality
+Decision Tree,STATEN ISLAND,Taxi Compliment
+Decision Tree,BROOKLYN,Dept of Investigations
+Decision Tree,BROOKLYN,Asbestos
+Decision Tree,QUEENS,Electrical
+Decision Tree,MANHATTAN,Unsanitary Pigeon Condition
+Decision Tree,MANHATTAN,Highway Condition
+Decision Tree,,Food Poisoning
+Decision Tree,Unspecified,Dead/Dying Tree
+Decision Tree,BROOKLYN,Public Toilet
+Decision Tree,STATEN ISLAND,Construction Lead Dust
+Decision Tree,QUEENS,WATER LEAK
+Decision Tree,BROOKLYN,Overgrown Tree/Branches
+Decision Tree,MANHATTAN,Retailer Complaint
+Decision Tree,BROOKLYN,Building Condition
+Decision Tree,,Street Sign - Damaged
+Decision Tree,MANHATTAN,Abandoned Vehicle
+Decision Tree,Unspecified,Building Condition
+Decision Tree,BROOKLYN,DEP Highway Condition
+Decision Tree,,Public Toilet
+Decision Tree,QUEENS,Traffic
+Decision Tree,Unspecified,Water Conservation
+Decision Tree,STATEN ISLAND,For Hire Vehicle Report
+Decision Tree,STATEN ISLAND,Residential Disposal Complaint
+Decision Tree,BROOKLYN,Traffic Signal Condition
+Decision Tree,MANHATTAN,Illegal Tree Damage
+Decision Tree,MANHATTAN,Snow or Ice
+Decision Tree,QUEENS,BEST/Site Safety
+Decision Tree,QUEENS,Overgrown Tree/Branches
+Decision Tree,BROOKLYN,Sanitation Worker or Vehicle Complaint
+Decision Tree,Unspecified,Dept of Investigations
+Decision Tree,QUEENS,Scaffold Safety
+Decision Tree,Unspecified,Non-Emergency Police Matter
+Decision Tree,MANHATTAN,Illegal Animal Kept as Pet
+Decision Tree,STATEN ISLAND,Industrial Waste
+Decision Tree,STATEN ISLAND,Beach/Pool/Sauna Complaint
+Decision Tree,STATEN ISLAND,Institution Disposal Complaint
+Decision Tree,STATEN ISLAND,Green Taxi Report
+Decision Tree,STATEN ISLAND,Bike Rack Condition
+Decision Tree,BROOKLYN,Bus Stop Shelter Complaint
+Decision Tree,Unspecified,Noise - Helicopter
+Decision Tree,BROOKLYN,Noise
+Decision Tree,QUEENS,School Maintenance
+Decision Tree,STATEN ISLAND,Root/Sewer/Sidewalk Condition
+Decision Tree,MANHATTAN,Lead
+Decision Tree,MANHATTAN,Institution Disposal Complaint
+Decision Tree,QUEENS,Day Care
+Decision Tree,MANHATTAN,Beach/Pool/Sauna Complaint
+Decision Tree,,For Hire Vehicle Report
+Decision Tree,QUEENS,Broken Parking Meter
+Decision Tree,STATEN ISLAND,Street Condition
+Decision Tree,BROOKLYN,Animal Facility - No Permit
+Decision Tree,STATEN ISLAND,Found Property
+Decision Tree,STATEN ISLAND,Lead
+Decision Tree,MANHATTAN,Dead Animal
+Decision Tree,STATEN ISLAND,Snow or Ice
+Decision Tree,QUEENS,Plumbing
+Decision Tree,QUEENS,Drinking Water
+Decision Tree,MANHATTAN,Drug Activity
+Decision Tree,Unspecified,Noise - Commercial
+Decision Tree,MANHATTAN,WATER LEAK
+Decision Tree,STATEN ISLAND,Private School Vaccine Mandate Non-Compliance
+Decision Tree,Unspecified,Abandoned Bike
+Decision Tree,Unspecified,Encampment
+Decision Tree,Unspecified,DEP Highway Condition
+Decision Tree,STATEN ISLAND,Maintenance or Facility
+Decision Tree,Unspecified,Animal Facility - No Permit
+Decision Tree,MANHATTAN,X-Ray Machine/Equipment
+Decision Tree,MANHATTAN,Litter Basket Request
+Decision Tree,BROOKLYN,Litter Basket Request
+Decision Tree,MANHATTAN,Electronics Waste Appointment
+Decision Tree,STATEN ISLAND,Noise - Park
+Decision Tree,Unspecified,Street Sign - Dangling
+Decision Tree,QUEENS,Incorrect Data
+Decision Tree,BROOKLYN,Noise - Park
+Decision Tree,Unspecified,Institution Disposal Complaint
+Decision Tree,Unspecified,Incorrect Data
+Decision Tree,STATEN ISLAND,Overgrown Tree/Branches
+Decision Tree,BROOKLYN,SAFETY
+Decision Tree,QUEENS,Taxi Complaint
+Decision Tree,Unspecified,Urinating in Public
+Decision Tree,BROOKLYN,Bike Rack Condition
+Decision Tree,STATEN ISLAND,Highway Condition
+Decision Tree,MANHATTAN,Poison Ivy
+Decision Tree,QUEENS,Traffic Signal Condition
+Decision Tree,BROOKLYN,Bridge Condition
+Decision Tree,BROOKLYN,Blocked Driveway
+Decision Tree,BROOKLYN,Scaffold Safety
+Decision Tree,Unspecified,Litter Basket Request
+Decision Tree,Unspecified,Street Sweeping Complaint
+Decision Tree,Unspecified,Bus Stop Shelter Complaint
+Decision Tree,Unspecified,Traffic Signal Condition
+Decision Tree,Unspecified,Dumpster Complaint
+Decision Tree,STATEN ISLAND,Electrical
+Decision Tree,Unspecified,Sewer
+Decision Tree,Unspecified,Scaffold Safety
+Decision Tree,QUEENS,Abandoned Vehicle
+Decision Tree,MANHATTAN,Building/Use
+Decision Tree,STATEN ISLAND,Dispatched Taxi Complaint
+Decision Tree,MANHATTAN,For Hire Vehicle Complaint
+Decision Tree,STATEN ISLAND,Pet Shop
+Decision Tree,STATEN ISLAND,Lot Condition
+Decision Tree,MANHATTAN,Calorie Labeling
+Decision Tree,BROOKLYN,Maintenance or Facility
+Decision Tree,Unspecified,Ferry Complaint
+Decision Tree,BROOKLYN,E-Scooter
+Decision Tree,Unspecified,Highway Condition
+Decision Tree,BROOKLYN,Curb Condition
+Decision Tree,BROOKLYN,Snow or Ice
+Decision Tree,STATEN ISLAND,Scaffold Safety
+Decision Tree,STATEN ISLAND,Abandoned Vehicle
+Decision Tree,QUEENS,Cranes and Derricks
+Decision Tree,BROOKLYN,Illegal Animal Kept as Pet
+Decision Tree,QUEENS,Consumer Complaint
+Decision Tree,MANHATTAN,Street Sign - Missing
+Decision Tree,BROOKLYN,Sewer
+Decision Tree,BROOKLYN,Construction Lead Dust
+Decision Tree,BROOKLYN,Root/Sewer/Sidewalk Condition
+Decision Tree,QUEENS,Litter Basket Complaint
+Decision Tree,MANHATTAN,Noise - Park
+Decision Tree,QUEENS,Litter Basket Request
+Decision Tree,BROOKLYN,Food Poisoning
+Decision Tree,STATEN ISLAND,BEST/Site Safety
+Decision Tree,QUEENS,Dead/Dying Tree
+Decision Tree,QUEENS,Internal Code
+Decision Tree,Unspecified,BEST/Site Safety
+Decision Tree,MANHATTAN,Lot Condition
+Decision Tree,Unspecified,Lifeguard
+Decision Tree,Unspecified,WATER LEAK
+Decision Tree,Unspecified,Sanitation Worker or Vehicle Complaint
+Decision Tree,Unspecified,Obstruction
+Decision Tree,QUEENS,Street Sign - Missing
+Decision Tree,MANHATTAN,Air Quality
+Decision Tree,QUEENS,SAFETY
+Decision Tree,BROOKLYN,Vaccine Mandate Non-Compliance
+Decision Tree,,Litter Basket Complaint
+Decision Tree,QUEENS,GENERAL
+Decision Tree,BROOKLYN,Dead Animal
+Decision Tree,BROOKLYN,Mold
+Decision Tree,MANHATTAN,APPLIANCE
+Decision Tree,QUEENS,Bus Stop Shelter Placement
+Decision Tree,MANHATTAN,Bus Stop Shelter Placement
+Decision Tree,MANHATTAN,Industrial Waste
+Decision Tree,,Taxi Compliment
+Decision Tree,BROOKLYN,Municipal Parking Facility
+Decision Tree,QUEENS,Poison Ivy
+Decision Tree,Unspecified,FLOORING/STAIRS
+Decision Tree,QUEENS,Blocked Driveway
+Decision Tree,QUEENS,PAINT/PLASTER
+Decision Tree,STATEN ISLAND,Hazardous Materials
+Decision Tree,BROOKLYN,Lost Property
+Decision Tree,MANHATTAN,Borough Office
+Decision Tree,STATEN ISLAND,Municipal Parking Facility
+Decision Tree,STATEN ISLAND,WATER LEAK
+Decision Tree,Unspecified,Pet Shop
+Decision Tree,QUEENS,Public Toilet
+Decision Tree,STATEN ISLAND,Consumer Complaint
+Decision Tree,Unspecified,Vaccine Mandate Non-Compliance
+Decision Tree,Unspecified,E-Scooter
+Decision Tree,MANHATTAN,Illegal Dumping
+Decision Tree,BROOKLYN,Plant
+Decision Tree,Unspecified,Taxi Complaint
+Decision Tree,QUEENS,Bike Rack Condition
+Decision Tree,MANHATTAN,Bike Rack Condition
+Decision Tree,BROOKLYN,Dumpster Complaint
+Decision Tree,Unspecified,Industrial Waste
+Decision Tree,STATEN ISLAND,Urinating in Public
+Decision Tree,MANHATTAN,Uprooted Stump
+Decision Tree,Unspecified,Highway Sign - Damaged
+Decision Tree,MANHATTAN,Water System
+Decision Tree,MANHATTAN,Highway Sign - Damaged
+Decision Tree,STATEN ISLAND,E-Scooter
+Decision Tree,BROOKLYN,Highway Sign - Damaged
+Decision Tree,STATEN ISLAND,Dead Animal
+Decision Tree,QUEENS,Encampment
+Decision Tree,MANHATTAN,Obstruction
+Decision Tree,QUEENS,Sewer
+Decision Tree,MANHATTAN,Municipal Parking Facility
+Decision Tree,QUEENS,OUTSIDE BUILDING
+Decision Tree,Unspecified,Street Sign - Missing
+Decision Tree,STATEN ISLAND,Posting Advertisement
+Decision Tree,Unspecified,Water System
+Decision Tree,,Dirty Condition
+Decision Tree,BROOKLYN,Bus Stop Shelter Placement
+Decision Tree,QUEENS,Illegal Tree Damage
+Decision Tree,BROOKLYN,LinkNYC
+Decision Tree,BROOKLYN,Animal-Abuse
+Decision Tree,Unspecified,Borough Office
+Decision Tree,Unspecified,Air Quality
+Decision Tree,Unspecified,Root/Sewer/Sidewalk Condition
+Decision Tree,QUEENS,Green Taxi Report
+Decision Tree,QUEENS,Noise - Park
+Decision Tree,QUEENS,Air Quality
+Decision Tree,QUEENS,Vaccine Mandate Non-Compliance
+Decision Tree,BROOKLYN,Posting Advertisement
+Decision Tree,MANHATTAN,Hazardous Materials
+Decision Tree,Unspecified,Emergency Response Team (ERT)
+Decision Tree,QUEENS,Dept of Investigations
+Decision Tree,QUEENS,Highway Condition
+Decision Tree,BROOKLYN,Water System
+Decision Tree,STATEN ISLAND,Unsanitary Pigeon Condition
+Decision Tree,Unspecified,Asbestos
+Decision Tree,BROOKLYN,Abandoned Vehicle
+Decision Tree,BROOKLYN,Taxi Compliment
+Decision Tree,STATEN ISLAND,For Hire Vehicle Complaint
+Decision Tree,Unspecified,Illegal Animal Sold
+Decision Tree,BROOKLYN,Street Sign - Missing
+Decision Tree,Unspecified,Abandoned Vehicle
+Decision Tree,Unspecified,Bus Stop Shelter Placement
+Decision Tree,BROOKLYN,Wood Pile Remaining
+Decision Tree,BROOKLYN,Hazardous Materials
+Decision Tree,BROOKLYN,Industrial Waste
+Decision Tree,QUEENS,Bridge Condition
+Decision Tree,QUEENS,Obstruction
+Decision Tree,Unspecified,Blocked Driveway
+Decision Tree,QUEENS,Found Property
+Decision Tree,QUEENS,Building/Use
+Decision Tree,QUEENS,Violation of Park Rules
+Decision Tree,BROOKLYN,Residential Disposal Complaint
+Decision Tree,Unspecified,Plant
+Decision Tree,MANHATTAN,Consumer Complaint
+Decision Tree,QUEENS,Dead Animal
+Decision Tree,QUEENS,Street Condition
+Decision Tree,BROOKLYN,Illegal Animal Sold
+Decision Tree,Unspecified,Mold
+Decision Tree,MANHATTAN,Taxi Compliment
+Decision Tree,MANHATTAN,Unsanitary Animal Pvt Property
+Decision Tree,,Noise
+Decision Tree,,Smoking
+Decision Tree,Unspecified,Animal-Abuse
+Decision Tree,QUEENS,Hazardous Materials
+Decision Tree,MANHATTAN,Vaccine Mandate Non-Compliance
+Decision Tree,Unspecified,Calorie Labeling
+Decision Tree,Unspecified,Unsanitary Pigeon Condition
+Decision Tree,BROOKLYN,Noise - House of Worship
+Decision Tree,QUEENS,Industrial Waste
+Decision Tree,BROOKLYN,Consumer Complaint
+Decision Tree,QUEENS,APPLIANCE
+Decision Tree,STATEN ISLAND,Curb Condition
+Decision Tree,Unspecified,Bike/Roller/Skate Chronic
+Decision Tree,Unspecified,For Hire Vehicle Report
+Decision Tree,BROOKLYN,Building Drinking Water Tank
+Decision Tree,MANHATTAN,Bike/Roller/Skate Chronic
+Decision Tree,QUEENS,Illegal Animal Sold
+Decision Tree,STATEN ISLAND,Sewer
+Decision Tree,MANHATTAN,Found Property
+Decision Tree,Unspecified,Noise - Residential
+Decision Tree,STATEN ISLAND,DOOR/WINDOW
+Decision Tree,Unspecified,Street Condition
+Decision Tree,MANHATTAN,Derelict Vehicles
+Decision Tree,BROOKLYN,Unsanitary Animal Facility
+Decision Tree,BROOKLYN,Building/Use
+Decision Tree,BROOKLYN,Homeless Person Assistance
+Decision Tree,STATEN ISLAND,Uprooted Stump
+Decision Tree,Unspecified,Private School Vaccine Mandate Non-Compliance
+Decision Tree,,Day Care
+Decision Tree,STATEN ISLAND,Litter Basket Request
+Decision Tree,STATEN ISLAND,OUTSIDE BUILDING
+Decision Tree,STATEN ISLAND,Air Quality
+Decision Tree,,Air Quality
+Decision Tree,Unspecified,Beach/Pool/Sauna Complaint
+Decision Tree,,Poison Ivy
+Decision Tree,,Cooling Tower
+Decision Tree,STATEN ISLAND,Illegal Dumping
+Decision Tree,MANHATTAN,Broken Parking Meter
+Decision Tree,BROOKLYN,Illegal Tree Damage
+Decision Tree,QUEENS,Bike/Roller/Skate Chronic
+Decision Tree,STATEN ISLAND,Request Large Bulky Item Collection
+Decision Tree,BROOKLYN,Lead
+Decision Tree,QUEENS,Institution Disposal Complaint
+Decision Tree,,Traffic
+Decision Tree,QUEENS,For Hire Vehicle Complaint
+Decision Tree,BROOKLYN,X-Ray Machine/Equipment
+Decision Tree,QUEENS,Taxi Licensee Complaint
+Decision Tree,Unspecified,Lost Property
+Decision Tree,,Lot Condition
+Decision Tree,MANHATTAN,Traffic
+Decision Tree,BROOKLYN,Obstruction
+Decision Tree,,DEP Highway Condition
+Decision Tree,STATEN ISLAND,Illegal Animal Sold
+Decision Tree,STATEN ISLAND,Bike/Roller/Skate Chronic
+Decision Tree,Unspecified,Posting Advertisement
+Decision Tree,MANHATTAN,Dispatched Taxi Complaint
+Decision Tree,BROOKLYN,BEST/Site Safety
+Decision Tree,BROOKLYN,Calorie Labeling
+Decision Tree,Unspecified,Dead Animal
+Decision Tree,MANHATTAN,Private School Vaccine Mandate Non-Compliance
+Decision Tree,BROOKLYN,OUTSIDE BUILDING
+Decision Tree,Unspecified,Residential Disposal Complaint
+Decision Tree,BROOKLYN,Unsanitary Pigeon Condition
+Decision Tree,STATEN ISLAND,Blocked Driveway
+Decision Tree,QUEENS,Lead
+Decision Tree,STATEN ISLAND,APPLIANCE
+Decision Tree,STATEN ISLAND,Plumbing
+Decision Tree,STATEN ISLAND,Internal Code
+Decision Tree,MANHATTAN,Litter Basket Complaint
+Decision Tree,,Street Light Condition
+Decision Tree,STATEN ISLAND,Homeless Person Assistance
+Decision Tree,,New Tree Request
+Decision Tree,BROOKLYN,Street Condition
+Decision Tree,BROOKLYN,Encampment
+Decision Tree,,Noise - Vehicle
+Decision Tree,STATEN ISLAND,DEP Sidewalk Condition
+Decision Tree,MANHATTAN,Highway Sign - Dangling
+Decision Tree,MANHATTAN,Posting Advertisement
+Decision Tree,BROOKLYN,Taxi Complaint
+Decision Tree,MANHATTAN,LinkNYC
+Decision Tree,MANHATTAN,School Maintenance
+Decision Tree,STATEN ISLAND,School Maintenance
+Decision Tree,BROOKLYN,For Hire Vehicle Complaint
+Decision Tree,BROOKLYN,Institution Disposal Complaint
+Decision Tree,STATEN ISLAND,Plant
+Decision Tree,STATEN ISLAND,Taxi Complaint
+Decision Tree,STATEN ISLAND,Unsanitary Animal Pvt Property
+Decision Tree,QUEENS,Municipal Parking Facility
+Decision Tree,QUEENS,Unsanitary Animal Facility
+Decision Tree,STATEN ISLAND,LinkNYC
+Decision Tree,QUEENS,Radioactive Material
+Decision Tree,QUEENS,Uprooted Stump
+Decision Tree,BROOKLYN,Highway Sign - Dangling
+Decision Tree,STATEN ISLAND,Calorie Labeling
+Decision Tree,MANHATTAN,Request Large Bulky Item Collection
+Decision Tree,Unspecified,Overgrown Tree/Branches
+Decision Tree,MANHATTAN,Internal Code
+Decision Tree,,Non-Emergency Police Matter
+Decision Tree,MANHATTAN,Radioactive Material
+Decision Tree,BROOKLYN,Drug Activity
+Decision Tree,MANHATTAN,Homeless Person Assistance
+Decision Tree,QUEENS,Curb Condition
+Decision Tree,Unspecified,Internal Code
+Decision Tree,STATEN ISLAND,Animal in a Park
+Decision Tree,MANHATTAN,Urinating in Public
+Decision Tree,Unspecified,Unsanitary Animal Facility
+Decision Tree,MANHATTAN,Investigations and Discipline (IAD)
+Decision Tree,MANHATTAN,Plumbing
+Decision Tree,BROOKLYN,Litter Basket Complaint
+Decision Tree,STATEN ISLAND,Drug Activity
+Decision Tree,STATEN ISLAND,Wood Pile Remaining
+Decision Tree,QUEENS,Request Large Bulky Item Collection
+Decision Tree,MANHATTAN,DOOR/WINDOW
+Decision Tree,MANHATTAN,New Tree Request
+Decision Tree,QUEENS,Indoor Sewage
+Decision Tree,MANHATTAN,ELECTRIC
+Decision Tree,STATEN ISLAND,Taxi Licensee Complaint
+Decision Tree,,Electronics Waste Appointment
+Decision Tree,QUEENS,Real Time Enforcement
+Decision Tree,,SAFETY
+Decision Tree,Unspecified,Noise - House of Worship
+Decision Tree,MANHATTAN,Curb Condition
+Decision Tree,QUEENS,X-Ray Machine/Equipment
+Decision Tree,STATEN ISLAND,Obstruction
+Decision Tree,QUEENS,LinkNYC
+Decision Tree,BROOKLYN,APPLIANCE
+Decision Tree,QUEENS,ELECTRIC
+Decision Tree,Unspecified,Construction Lead Dust
+Decision Tree,MANHATTAN,OUTSIDE BUILDING
+Decision Tree,,Dept of Investigations
+Decision Tree,Unspecified,Special Operations
+Decision Tree,BROOKLYN,Lot Condition
+Decision Tree,MANHATTAN,Green Taxi Report
+Decision Tree,BROOKLYN,Animal in a Park
+Decision Tree,Unspecified,Illegal Animal Kept as Pet
+Decision Tree,,Found Property
+Decision Tree,,Graffiti
+Decision Tree,Unspecified,Snow or Ice
+Decision Tree,QUEENS,Unsanitary Pigeon Condition
+Decision Tree,STATEN ISLAND,Indoor Sewage
+Decision Tree,Unspecified,ELECTRIC
+Decision Tree,Unspecified,Electrical
+Decision Tree,BROOKLYN,Broken Parking Meter
+Decision Tree,STATEN ISLAND,ELECTRIC
+Decision Tree,,Noise - Street/Sidewalk
+Decision Tree,,Illegal Parking
+Decision Tree,QUEENS,Calorie Labeling
+Decision Tree,,Illegal Posting
+Decision Tree,STATEN ISLAND,Highway Sign - Dangling
+Decision Tree,MANHATTAN,Illegal Animal Sold
+Decision Tree,STATEN ISLAND,Special Operations
+Decision Tree,Unspecified,Bike Rack Condition
+Decision Tree,BROOKLYN,ZTESTINT
+Decision Tree,BROOKLYN,Beach/Pool/Sauna Complaint
+Decision Tree,,Taxi Licensee Complaint
+Decision Tree,Unspecified,LinkNYC
+Decision Tree,STATEN ISLAND,Litter Basket Complaint
+Decision Tree,STATEN ISLAND,Broken Parking Meter
+Decision Tree,Unspecified,Lead
+Decision Tree,Unspecified,Request Large Bulky Item Collection
+Decision Tree,Unspecified,Derelict Vehicles
+Decision Tree,STATEN ISLAND,GENERAL
+Decision Tree,MANHATTAN,Bottled Water
+Decision Tree,BROOKLYN,Bike/Roller/Skate Chronic
+Decision Tree,Unspecified,Drinking Water
+Decision Tree,QUEENS,DOOR/WINDOW
+Decision Tree,Unspecified,Lot Condition
+Decision Tree,QUEENS,Dispatched Taxi Complaint
+Decision Tree,BRONX,AHV Inspection Unit
+Decision Tree,Unspecified,Traffic
+Decision Tree,Unspecified,Bottled Water
+Decision Tree,,Disorderly Youth
+Decision Tree,Unspecified,Found Property
+Decision Tree,BROOKLYN,Urinating in Public
+Decision Tree,Unspecified,Municipal Parking Facility
+Decision Tree,Unspecified,Consumer Complaint
+Decision Tree,STATEN ISLAND,Indoor Air Quality
+Decision Tree,QUEENS,Drug Activity
+Decision Tree,MANHATTAN,Real Time Enforcement
+Decision Tree,,Animal-Abuse
+Decision Tree,BROOKLYN,Found Property
+Decision Tree,Unspecified,Curb Condition
+Decision Tree,Unspecified,DOOR/WINDOW
+Decision Tree,BROOKLYN,School Maintenance
+Decision Tree,Unspecified,Indoor Air Quality
+Decision Tree,QUEENS,Posting Advertisement
+Decision Tree,MANHATTAN,Indoor Air Quality
+Decision Tree,Unspecified,Plumbing
+Decision Tree,MANHATTAN,Wood Pile Remaining
+Decision Tree,,Squeegee
+Decision Tree,QUEENS,Urinating in Public
+Decision Tree,STATEN ISLAND,HEAT/HOT WATER
+Decision Tree,MANHATTAN,Plant
+Decision Tree,BROOKLYN,Cranes and Derricks
+Logistic Regression,MANHATTAN,Mobile Food Vendor
+Logistic Regression,MANHATTAN,Street Sign - Damaged
+Logistic Regression,BROOKLYN,Window Guard
+Logistic Regression,QUEENS,Noise - Vehicle
+Logistic Regression,STATEN ISLAND,Boilers
+Logistic Regression,STATEN ISLAND,Noise - House of Worship
+Logistic Regression,QUEENS,FLOORING/STAIRS
 Logistic Regression,BROOKLYN,Noise - Street/Sidewalk
-Logistic Regression,QUEENS,Noise - Street/Sidewalk
-Logistic Regression,STATEN ISLAND,Street Sign - Damaged
-Logistic Regression,STATEN ISLAND,Ferry Complaint
-Logistic Regression,BROOKLYN,Illegal Posting
-Logistic Regression,BROOKLYN,Noise - Vehicle
-Logistic Regression,STATEN ISLAND,Illegal Posting
-Logistic Regression,Unspecified,Street Sign - Damaged
-Logistic Regression,BROOKLYN,Panhandling
-Logistic Regression,BROOKLYN,PLUMBING
-Logistic Regression,MANHATTAN,Window Guard
-Logistic Regression,STATEN ISLAND,Sanitation Worker or Vehicle Complaint
+Logistic Regression,QUEENS,Harboring Bees/Wasps
+Logistic Regression,QUEENS,Unleashed Dog
+Logistic Regression,MANHATTAN,Noise - Street/Sidewalk
+Logistic Regression,STATEN ISLAND,Mobile Food Vendor
 Logistic Regression,QUEENS,Illegal Posting
-SVM,QUEENS,Noise - Street/Sidewalk
-SVM,QUEENS,Unleashed Dog
-SVM,MANHATTAN,Ferry Complaint
-SVM,MANHATTAN,Illegal Fireworks
-SVM,MANHATTAN,Illegal Posting
-SVM,BROOKLYN,Noise - Vehicle
-SVM,QUEENS,Asbestos
-SVM,BROOKLYN,Noise - Street/Sidewalk
-SVM,BROOKLYN,Oil or Gas Spill
-SVM,STATEN ISLAND,Street Sign - Damaged
-SVM,BROOKLYN,Non-Emergency Police Matter
-SVM,STATEN ISLAND,Ferry Complaint
-SVM,BROOKLYN,Illegal Posting
-SVM,Unspecified,Street Sign - Damaged
-SVM,BROOKLYN,Panhandling
-SVM,MANHATTAN,Noise - Street/Sidewalk
-SVM,STATEN ISLAND,Sanitation Worker or Vehicle Complaint
+Logistic Regression,MANHATTAN,Dirty Condition
+Logistic Regression,BROOKLYN,Noise - Vehicle
+Logistic Regression,MANHATTAN,Window Guard
+Logistic Regression,MANHATTAN,Illegal Posting
+Logistic Regression,STATEN ISLAND,Missed Collection
+Logistic Regression,MANHATTAN,Building Condition
+Logistic Regression,MANHATTAN,Harboring Bees/Wasps
+Logistic Regression,STATEN ISLAND,SAFETY
+Logistic Regression,MANHATTAN,Unleashed Dog
+Logistic Regression,QUEENS,Panhandling
+Logistic Regression,STATEN ISLAND,Street Light Condition
+Logistic Regression,MANHATTAN,Noise - Commercial
+Logistic Regression,BROOKLYN,Emergency Response Team (ERT)
+Logistic Regression,STATEN ISLAND,Illegal Posting
+Logistic Regression,MANHATTAN,Snow or Ice
+Logistic Regression,MANHATTAN,Street Light Condition
+Logistic Regression,BROOKLYN,Unleashed Dog
+Logistic Regression,BROOKLYN,Harboring Bees/Wasps
+Logistic Regression,MANHATTAN,Sidewalk Condition
+Logistic Regression,STATEN ISLAND,Noise - Street/Sidewalk
+Logistic Regression,Unspecified,Adopt-A-Basket
+Logistic Regression,MANHATTAN,SAFETY
+Logistic Regression,QUEENS,Noise - Helicopter
+Logistic Regression,MANHATTAN,Disorderly Youth
+Logistic Regression,QUEENS,Smoking
+Logistic Regression,BROOKLYN,Illegal Posting
+Logistic Regression,BROOKLYN,Day Care
+Logistic Regression,MANHATTAN,Noise - Vehicle
+Logistic Regression,BROOKLYN,Street Sign - Damaged
+Logistic Regression,MANHATTAN,Street Sweeping Complaint
+Logistic Regression,STATEN ISLAND,Panhandling
+Logistic Regression,QUEENS,Illegal Fireworks
+Logistic Regression,MANHATTAN,FLOORING/STAIRS
+Logistic Regression,STATEN ISLAND,Dept of Investigations
+Logistic Regression,MANHATTAN,Recycling Basket Complaint
+Logistic Regression,STATEN ISLAND,Food Poisoning
+Logistic Regression,Unspecified,Noise - Street/Sidewalk
+Logistic Regression,MANHATTAN,Graffiti
+Logistic Regression,MANHATTAN,Adopt-A-Basket
+Logistic Regression,QUEENS,Noise - Commercial
+Logistic Regression,MANHATTAN,Boilers
+Logistic Regression,STATEN ISLAND,Unleashed Dog
+Logistic Regression,BROOKLYN,Smoking
+Logistic Regression,STATEN ISLAND,Adopt-A-Basket
+Logistic Regression,STATEN ISLAND,Disorderly Youth
+Logistic Regression,STATEN ISLAND,Non-Residential Heat
+Logistic Regression,MANHATTAN,Emergency Response Team (ERT)
+Logistic Regression,STATEN ISLAND,Dumpster Complaint
+Logistic Regression,Unspecified,Sidewalk Condition
+Logistic Regression,STATEN ISLAND,Transfer Station Complaint
+Logistic Regression,STATEN ISLAND,Harboring Bees/Wasps
+Logistic Regression,QUEENS,Missed Collection
+Logistic Regression,BROOKLYN,Noise - Commercial
+Logistic Regression,STATEN ISLAND,Noise
+Logistic Regression,MANHATTAN,Food Poisoning
+Logistic Regression,STATEN ISLAND,Graffiti
+Logistic Regression,QUEENS,Cooling Tower
+Logistic Regression,STATEN ISLAND,FLOORING/STAIRS
+Logistic Regression,MANHATTAN,PLUMBING
+Logistic Regression,STATEN ISLAND,Dirty Condition
+Logistic Regression,STATEN ISLAND,Day Care
+Logistic Regression,QUEENS,Noise - House of Worship
+Logistic Regression,STATEN ISLAND,Window Guard
+Logistic Regression,STATEN ISLAND,Street Sign - Damaged
+Logistic Regression,STATEN ISLAND,Bus Stop Shelter Complaint
+Logistic Regression,MANHATTAN,Overgrown Tree/Branches
+Logistic Regression,MANHATTAN,Noise
+Logistic Regression,MANHATTAN,PAINT/PLASTER
+Logistic Regression,Unspecified,Smoking
+Logistic Regression,MANHATTAN,Noise - Helicopter
+Logistic Regression,Unspecified,PAINT/PLASTER
+Logistic Regression,MANHATTAN,Abandoned Vehicle
+Logistic Regression,Unspecified,Missed Collection
+Logistic Regression,BROOKLYN,Street Light Condition
+Logistic Regression,BROOKLYN,Street Sweeping Complaint
+Logistic Regression,BROOKLYN,Disorderly Youth
+Logistic Regression,Unspecified,Window Guard
+Logistic Regression,QUEENS,For Hire Vehicle Report
+Logistic Regression,STATEN ISLAND,Illegal Parking
+Logistic Regression,QUEENS,Street Sign - Damaged
+Logistic Regression,MANHATTAN,Cooling Tower
+Logistic Regression,STATEN ISLAND,Sidewalk Condition
+Logistic Regression,STATEN ISLAND,PAINT/PLASTER
+Logistic Regression,QUEENS,Graffiti
+Logistic Regression,QUEENS,Noise - Residential
+Logistic Regression,STATEN ISLAND,Noise - Helicopter
+Logistic Regression,STATEN ISLAND,Smoking
+Logistic Regression,MANHATTAN,Highway Sign - Damaged
+Logistic Regression,STATEN ISLAND,Mold
+Logistic Regression,QUEENS,Mobile Food Vendor
+Logistic Regression,Unspecified,Noise
+Logistic Regression,QUEENS,Lot Condition
+Logistic Regression,STATEN ISLAND,Illegal Fireworks
+Logistic Regression,MANHATTAN,Bus Stop Shelter Complaint
+Logistic Regression,BROOKLYN,Bus Stop Shelter Complaint
+Logistic Regression,STATEN ISLAND,Noise - Commercial
+Logistic Regression,STATEN ISLAND,Highway Sign - Damaged
+Logistic Regression,BROOKLYN,Dirty Condition
+Logistic Regression,QUEENS,Window Guard
+Logistic Regression,Unspecified,Hazardous Materials
+Logistic Regression,BROOKLYN,General Construction/Plumbing
+Logistic Regression,QUEENS,Emergency Response Team (ERT)
+Logistic Regression,STATEN ISLAND,Oil or Gas Spill
+Logistic Regression,Unspecified,Mobile Food Vendor
+Logistic Regression,BROOKLYN,PAINT/PLASTER
+Logistic Regression,Unspecified,Cooling Tower
+Logistic Regression,BROOKLYN,Boilers
+Logistic Regression,MANHATTAN,Transfer Station Complaint
+Logistic Regression,,Ferry Inquiry
+Logistic Regression,QUEENS,DEP Highway Condition
+Logistic Regression,BROOKLYN,Illegal Fireworks
+Logistic Regression,Unspecified,Street Condition
+Logistic Regression,MANHATTAN,Illegal Fireworks
+Logistic Regression,QUEENS,Non-Residential Heat
+Logistic Regression,STATEN ISLAND,Recycling Basket Complaint
+Logistic Regression,STATEN ISLAND,Noise - Residential
+Logistic Regression,QUEENS,Food Poisoning
+Logistic Regression,QUEENS,Disorderly Youth
+Logistic Regression,Unspecified,Elevator
+Logistic Regression,Unspecified,Food Poisoning
+Logistic Regression,BROOKLYN,Non-Residential Heat
+Logistic Regression,MANHATTAN,Incorrect Data
+Logistic Regression,BROOKLYN,Non-Emergency Police Matter
+Logistic Regression,QUEENS,Dumpster Complaint
+Logistic Regression,STATEN ISLAND,Animal Facility - No Permit
+Logistic Regression,QUEENS,Recycling Basket Complaint
+Logistic Regression,MANHATTAN,Day Care
+Logistic Regression,BROOKLYN,Adopt-A-Basket
+Logistic Regression,MANHATTAN,General Construction/Plumbing
+Logistic Regression,QUEENS,Animal Facility - No Permit
+Logistic Regression,QUEENS,Noise
+Logistic Regression,BROOKLYN,Cooling Tower
+Logistic Regression,QUEENS,Building Condition
+Logistic Regression,QUEENS,Transfer Station Complaint
+Logistic Regression,Unspecified,Dirty Condition
+Logistic Regression,QUEENS,Street Light Condition
+Logistic Regression,BROOKLYN,Panhandling
+Logistic Regression,QUEENS,Illegal Animal Kept as Pet
+Logistic Regression,MANHATTAN,Street Sign - Dangling
+Logistic Regression,STATEN ISLAND,DEP Highway Condition
+Logistic Regression,MANHATTAN,Animal-Abuse
+Logistic Regression,STATEN ISLAND,Bus Stop Shelter Placement
+Logistic Regression,BROOKLYN,Graffiti
+Logistic Regression,Unspecified,Unleashed Dog
+Logistic Regression,STATEN ISLAND,Noise - Vehicle
+Logistic Regression,Unspecified,Non-Residential Heat
+Logistic Regression,QUEENS,Green Taxi Complaint
+Logistic Regression,Unspecified,Illegal Parking
+Logistic Regression,BROOKLYN,Transfer Station Complaint
+Logistic Regression,QUEENS,PLUMBING
+Logistic Regression,BROOKLYN,Illegal Parking
+Logistic Regression,QUEENS,Overgrown Tree/Branches
+Logistic Regression,MANHATTAN,Missed Collection
+Logistic Regression,Unspecified,Harboring Bees/Wasps
+Logistic Regression,Unspecified,Noise - Commercial
+Logistic Regression,QUEENS,Taxi Compliment
+Logistic Regression,MANHATTAN,Unsanitary Animal Facility
+Logistic Regression,MANHATTAN,Unsanitary Pigeon Condition
+Logistic Regression,QUEENS,Dept of Investigations
+Logistic Regression,BROOKLYN,Mobile Food Vendor
+Logistic Regression,BROOKLYN,Overgrown Tree/Branches
+Logistic Regression,BROOKLYN,Missed Collection
+Logistic Regression,MANHATTAN,Tattooing
+Logistic Regression,QUEENS,Adopt-A-Basket
+Logistic Regression,STATEN ISLAND,Street Sign - Dangling
+Logistic Regression,Unspecified,Building Condition
+Logistic Regression,BROOKLYN,Oil or Gas Spill
+Logistic Regression,MANHATTAN,Dead/Dying Tree
+Logistic Regression,BROOKLYN,Dept of Investigations
+Logistic Regression,QUEENS,Boilers
+Logistic Regression,STATEN ISLAND,Unsanitary Animal Facility
+Logistic Regression,MANHATTAN,For Hire Vehicle Report
+Logistic Regression,QUEENS,Sidewalk Condition
+Logistic Regression,MANHATTAN,Street Sign - Missing
+Logistic Regression,MANHATTAN,Noise - Residential
+Logistic Regression,,Building Condition
+Logistic Regression,BROOKLYN,Noise - Residential
+Logistic Regression,Unspecified,Dept of Investigations
+Logistic Regression,Unspecified,Day Care
+Logistic Regression,STATEN ISLAND,Traffic
+Logistic Regression,BROOKLYN,FLOORING/STAIRS
+Logistic Regression,BROOKLYN,Sidewalk Condition
+Logistic Regression,STATEN ISLAND,Dead/Dying Tree
+Logistic Regression,QUEENS,Animal-Abuse
+Logistic Regression,MANHATTAN,Non-Residential Heat
+Logistic Regression,BROOKLYN,Dead/Dying Tree
+Logistic Regression,QUEENS,Non-Emergency Police Matter
+Logistic Regression,BROOKLYN,Street Sign - Dangling
+Logistic Regression,QUEENS,Retailer Complaint
+Logistic Regression,MANHATTAN,Street Condition
+Logistic Regression,BROOKLYN,Recycling Basket Complaint
+Logistic Regression,BROOKLYN,WATER LEAK
+Logistic Regression,Unspecified,Taxi Compliment
+Logistic Regression,QUEENS,Mold
+Logistic Regression,QUEENS,Illegal Parking
+Logistic Regression,MANHATTAN,Animal Facility - No Permit
+Logistic Regression,QUEENS,PAINT/PLASTER
+Logistic Regression,MANHATTAN,DEP Highway Condition
+Logistic Regression,STATEN ISLAND,Non-Emergency Police Matter
+Logistic Regression,QUEENS,WATER LEAK
+Logistic Regression,MANHATTAN,Sewer
+Logistic Regression,STATEN ISLAND,Root/Sewer/Sidewalk Condition
+Logistic Regression,BROOKLYN,Traffic
+Logistic Regression,MANHATTAN,Residential Disposal Complaint
+Logistic Regression,MANHATTAN,Mold
+Logistic Regression,MANHATTAN,Retailer Complaint
+Logistic Regression,MANHATTAN,Noise - House of Worship
+Logistic Regression,QUEENS,General Construction/Plumbing
+Logistic Regression,MANHATTAN,Oil or Gas Spill
+Logistic Regression,BROOKLYN,For Hire Vehicle Report
+Logistic Regression,Unspecified,SAFETY
+Logistic Regression,BROOKLYN,Tattooing
+Logistic Regression,MANHATTAN,Maintenance or Facility
+Logistic Regression,MANHATTAN,Dumpster Complaint
+Logistic Regression,MANHATTAN,Taxi Complaint
+Logistic Regression,QUEENS,Root/Sewer/Sidewalk Condition
+Logistic Regression,STATEN ISLAND,Squeegee
+Logistic Regression,Unspecified,Lifeguard
+Logistic Regression,QUEENS,Snow or Ice
+Logistic Regression,QUEENS,Highway Sign - Damaged
+Logistic Regression,MANHATTAN,Animal in a Park
+Logistic Regression,QUEENS,Residential Disposal Complaint
+Logistic Regression,MANHATTAN,Root/Sewer/Sidewalk Condition
+Logistic Regression,QUEENS,Lost Property
+Logistic Regression,BROOKLYN,PLUMBING
+Logistic Regression,BROOKLYN,Water Quality
+Logistic Regression,STATEN ISLAND,Taxi Compliment
+Logistic Regression,MANHATTAN,Panhandling
+Logistic Regression,QUEENS,Oil or Gas Spill
+Logistic Regression,BROOKLYN,Animal-Abuse
+Logistic Regression,STATEN ISLAND,WATER LEAK
+Logistic Regression,Unspecified,Boilers
+Logistic Regression,QUEENS,Borough Office
+Logistic Regression,BROOKLYN,DEP Highway Condition
+Logistic Regression,,Public Toilet
+Logistic Regression,QUEENS,Traffic
+Logistic Regression,STATEN ISLAND,For Hire Vehicle Report
+Logistic Regression,STATEN ISLAND,Green Taxi Complaint
+Logistic Regression,STATEN ISLAND,Residential Disposal Complaint
+Logistic Regression,BROOKLYN,Traffic Signal Condition
+Logistic Regression,MANHATTAN,Highway Condition
+Logistic Regression,MANHATTAN,Encampment
+Logistic Regression,QUEENS,Pet Shop
+Logistic Regression,MANHATTAN,Illegal Animal Kept as Pet
+Logistic Regression,MANHATTAN,Water Quality
+Logistic Regression,STATEN ISLAND,Green Taxi Report
+Logistic Regression,STATEN ISLAND,Municipal Parking Facility
+Logistic Regression,STATEN ISLAND,Street Sweeping Complaint
+Logistic Regression,QUEENS,Broken Parking Meter
+Logistic Regression,STATEN ISLAND,Hazardous Materials
+Logistic Regression,BROOKLYN,Animal Facility - No Permit
+Logistic Regression,Unspecified,Oil or Gas Spill
+Logistic Regression,STATEN ISLAND,Found Property
+Logistic Regression,STATEN ISLAND,Industrial Waste
+Logistic Regression,STATEN ISLAND,General Construction/Plumbing
+Logistic Regression,QUEENS,Street Condition
+Logistic Regression,Unspecified,Noise - Helicopter
+Logistic Regression,BROOKLYN,Noise - Helicopter
+Logistic Regression,MANHATTAN,Asbestos
+Logistic Regression,QUEENS,Maintenance or Facility
+Logistic Regression,MANHATTAN,Municipal Parking Facility
+Logistic Regression,Unspecified,Animal Facility - No Permit
+Logistic Regression,BROOKLYN,Green Taxi Complaint
+Logistic Regression,Unspecified,WATER LEAK
+Logistic Regression,Unspecified,Highway Condition
+Logistic Regression,STATEN ISLAND,Street Condition
+Logistic Regression,QUEENS,Street Sign - Dangling
+Logistic Regression,STATEN ISLAND,Lifeguard
+Logistic Regression,BROOKLYN,Borough Office
+Logistic Regression,Unspecified,Dead/Dying Tree
+Logistic Regression,BROOKLYN,SAFETY
+Logistic Regression,QUEENS,Taxi Complaint
+Logistic Regression,MANHATTAN,Consumer Complaint
+Logistic Regression,MANHATTAN,Hazardous Materials
+Logistic Regression,BROOKLYN,Bike Rack Condition
+Logistic Regression,BROOKLYN,Consumer Complaint
+Logistic Regression,Unspecified,Street Sweeping Complaint
+Logistic Regression,Unspecified,Dumpster Complaint
+Logistic Regression,MANHATTAN,WATER LEAK
+Logistic Regression,Unspecified,Sewer
+Logistic Regression,MANHATTAN,Lifeguard
+Logistic Regression,Unspecified,Tattooing
+Logistic Regression,STATEN ISLAND,Retailer Complaint
+Logistic Regression,Unspecified,Highway Sign - Damaged
+Logistic Regression,MANHATTAN,Dead Animal
+Logistic Regression,QUEENS,Street Sweeping Complaint
+Logistic Regression,BROOKLYN,Maintenance or Facility
+Logistic Regression,STATEN ISLAND,Pet Shop
+Logistic Regression,STATEN ISLAND,Lot Condition
+Logistic Regression,BROOKLYN,Snow or Ice
+Logistic Regression,QUEENS,Asbestos
+Logistic Regression,BROOKLYN,Illegal Animal Kept as Pet
+Logistic Regression,BROOKLYN,Water System
+Logistic Regression,QUEENS,Dead Animal
+Logistic Regression,STATEN ISLAND,Overgrown Tree/Branches
+Logistic Regression,BROOKLYN,Sewer
+Logistic Regression,BROOKLYN,Root/Sewer/Sidewalk Condition
+Logistic Regression,QUEENS,Dead/Dying Tree
+Logistic Regression,MANHATTAN,Lot Condition
+Logistic Regression,QUEENS,Construction Lead Dust
+Logistic Regression,BROOKLYN,Incorrect Data
+Logistic Regression,Unspecified,Overgrown Tree/Branches
+Logistic Regression,STATEN ISLAND,Water Quality
+Logistic Regression,Unspecified,Scaffold Safety
+Logistic Regression,BROOKLYN,Drinking Water
+Logistic Regression,Unspecified,Incorrect Data
+Logistic Regression,STATEN ISLAND,DOOR/WINDOW
+Logistic Regression,STATEN ISLAND,Snow or Ice
+Logistic Regression,MANHATTAN,Air Quality
+Logistic Regression,STATEN ISLAND,Scaffold Safety
+Logistic Regression,,Litter Basket Complaint
+Logistic Regression,QUEENS,GENERAL
+Logistic Regression,BROOKLYN,Dead Animal
+Logistic Regression,STATEN ISLAND,Encampment
+Logistic Regression,BROOKLYN,Mold
+Logistic Regression,STATEN ISLAND,Tattooing
+Logistic Regression,STATEN ISLAND,Maintenance or Facility
+Logistic Regression,MANHATTAN,Scaffold Safety
+Logistic Regression,MANHATTAN,Traffic Signal Condition
+Logistic Regression,MANHATTAN,Bus Stop Shelter Placement
+Logistic Regression,MANHATTAN,Industrial Waste
+Logistic Regression,,Taxi Compliment
+Logistic Regression,STATEN ISLAND,Illegal Animal Kept as Pet
+Logistic Regression,BROOKLYN,Municipal Parking Facility
+Logistic Regression,Unspecified,PLUMBING
+Logistic Regression,QUEENS,Consumer Complaint
+Logistic Regression,QUEENS,Abandoned Vehicle
+Logistic Regression,QUEENS,Squeegee
+Logistic Regression,QUEENS,Tattooing
+Logistic Regression,Unspecified,Bus Stop Shelter Complaint
+Logistic Regression,Unspecified,FLOORING/STAIRS
+Logistic Regression,,New Tree Request
+Logistic Regression,MANHATTAN,Green Taxi Complaint
+Logistic Regression,Unspecified,Panhandling
+Logistic Regression,STATEN ISLAND,Dead Animal
+Logistic Regression,QUEENS,Bus Stop Shelter Placement
+Logistic Regression,Unspecified,Bus Stop Shelter Placement
+Logistic Regression,STATEN ISLAND,Illegal Animal Sold
+Logistic Regression,Unspecified,Taxi Complaint
+Logistic Regression,QUEENS,Municipal Parking Facility
+Logistic Regression,BROOKLYN,Dumpster Complaint
+Logistic Regression,Unspecified,Retailer Complaint
+Logistic Regression,Unspecified,Root/Sewer/Sidewalk Condition
+Logistic Regression,STATEN ISLAND,Street Sign - Missing
+Logistic Regression,MANHATTAN,Water System
+Logistic Regression,BROOKLYN,Highway Sign - Damaged
+Logistic Regression,QUEENS,Encampment
+Logistic Regression,QUEENS,Bus Stop Shelter Complaint
+Logistic Regression,QUEENS,Street Sign - Missing
+Logistic Regression,Unspecified,Asbestos
+Logistic Regression,,Food Establishment
+Logistic Regression,QUEENS,Sewer
+Logistic Regression,QUEENS,Scaffold Safety
+Logistic Regression,QUEENS,OUTSIDE BUILDING
+Logistic Regression,STATEN ISLAND,Posting Advertisement
+Logistic Regression,BROOKLYN,Bus Stop Shelter Placement
+Logistic Regression,STATEN ISLAND,Animal-Abuse
+Logistic Regression,BROOKLYN,Retailer Complaint
+Logistic Regression,Unspecified,Air Quality
+Logistic Regression,MANHATTAN,Non-Emergency Police Matter
+Logistic Regression,STATEN ISLAND,Plant
+Logistic Regression,QUEENS,Air Quality
+Logistic Regression,STATEN ISLAND,Emergency Response Team (ERT)
+Logistic Regression,STATEN ISLAND,Animal in a Park
+Logistic Regression,BROOKLYN,Industrial Waste
+Logistic Regression,STATEN ISLAND,Consumer Complaint
+Logistic Regression,BROOKLYN,Hazardous Materials
+Logistic Regression,BROOKLYN,Residential Disposal Complaint
+Logistic Regression,Unspecified,Dead Animal
+Logistic Regression,MANHATTAN,Drug Activity
+Logistic Regression,STATEN ISLAND,Asbestos
+Logistic Regression,STATEN ISLAND,Illegal Tree Damage
+Logistic Regression,MANHATTAN,Wood Pile Remaining
+Logistic Regression,QUEENS,Hazardous Materials
+Logistic Regression,QUEENS,Traffic Signal Condition
+Logistic Regression,BROOKLYN,Noise - House of Worship
+Logistic Regression,QUEENS,Lifeguard
+Logistic Regression,Unspecified,Maintenance or Facility
+Logistic Regression,Unspecified,General Construction/Plumbing
+Logistic Regression,STATEN ISLAND,Sewer
+Logistic Regression,MANHATTAN,Traffic
+Logistic Regression,Unspecified,Industrial Waste
+Logistic Regression,STATEN ISLAND,PLUMBING
+Logistic Regression,QUEENS,Industrial Waste
+Logistic Regression,Unspecified,Snow or Ice
+Logistic Regression,Unspecified,Illegal Fireworks
+Logistic Regression,STATEN ISLAND,OUTSIDE BUILDING
+Logistic Regression,,Air Quality
+Logistic Regression,,Squeegee
+Logistic Regression,MANHATTAN,Broken Parking Meter
+Logistic Regression,STATEN ISLAND,Traffic Signal Condition
+Logistic Regression,BROOKLYN,Abandoned Vehicle
+Logistic Regression,,Found Property
+Logistic Regression,QUEENS,For Hire Vehicle Complaint
+Logistic Regression,QUEENS,Taxi Licensee Complaint
+Logistic Regression,MANHATTAN,Blocked Driveway
+Logistic Regression,MANHATTAN,Found Property
+Logistic Regression,,Lot Condition
+Logistic Regression,BROOKLYN,Scaffold Safety
+Logistic Regression,QUEENS,Blocked Driveway
+Logistic Regression,STATEN ISLAND,Highway Condition
+Logistic Regression,MANHATTAN,Illegal Tree Damage
+Logistic Regression,Unspecified,Unsanitary Pigeon Condition
+Logistic Regression,Unspecified,Posting Advertisement
+Logistic Regression,Unspecified,Recycling Basket Complaint
+Logistic Regression,MANHATTAN,Drinking Water
+Logistic Regression,Unspecified,Pet Shop
+Logistic Regression,QUEENS,Highway Condition
+Logistic Regression,BROOKLYN,OUTSIDE BUILDING
+Logistic Regression,Unspecified,Residential Disposal Complaint
+Logistic Regression,BROOKLYN,Street Sign - Missing
+Logistic Regression,BROOKLYN,Unsanitary Animal Facility
+Logistic Regression,Unspecified,Noise - Residential
+Logistic Regression,QUEENS,Found Property
+Logistic Regression,BROOKLYN,Lifeguard
+Logistic Regression,QUEENS,Incorrect Data
+Logistic Regression,Unspecified,Squeegee
+Logistic Regression,QUEENS,Calorie Labeling
+Logistic Regression,STATEN ISLAND,ZTESTINT
+Logistic Regression,BROOKLYN,Asbestos
+Logistic Regression,Unspecified,Illegal Animal Sold
+Logistic Regression,MANHATTAN,Bike Rack Condition
+Logistic Regression,MANHATTAN,Posting Advertisement
+Logistic Regression,BROOKLYN,Highway Condition
+Logistic Regression,STATEN ISLAND,Water System
+Logistic Regression,BROOKLYN,Pet Shop
+Logistic Regression,Unspecified,Street Sign - Dangling
+Logistic Regression,STATEN ISLAND,Unsanitary Pigeon Condition
+Logistic Regression,STATEN ISLAND,Bike Rack Condition
+Logistic Regression,QUEENS,Water System
+Logistic Regression,QUEENS,E-Scooter
+Logistic Regression,Unspecified,Street Sign - Missing
+Logistic Regression,STATEN ISLAND,Calorie Labeling
+Logistic Regression,STATEN ISLAND,Borough Office
+Logistic Regression,Unspecified,Traffic Signal Condition
+Logistic Regression,BROOKLYN,Posting Advertisement
+Logistic Regression,QUEENS,Litter Basket Complaint
+Logistic Regression,QUEENS,Vaccine Mandate Non-Compliance
+Logistic Regression,STATEN ISLAND,Dispatched Taxi Complaint
+Logistic Regression,Unspecified,Unsanitary Animal Facility
+Logistic Regression,Unspecified,Emergency Response Team (ERT)
+Logistic Regression,STATEN ISLAND,Drug Activity
+Logistic Regression,STATEN ISLAND,Plumbing
+Logistic Regression,MANHATTAN,Pet Shop
+Logistic Regression,MANHATTAN,Calorie Labeling
+Logistic Regression,STATEN ISLAND,HEAT/HOT WATER
+Logistic Regression,QUEENS,Bike Rack Condition
+Logistic Regression,Unspecified,Noise - House of Worship
+Logistic Regression,Unspecified,Water System
+Logistic Regression,QUEENS,APPLIANCE
+Logistic Regression,MANHATTAN,OUTSIDE BUILDING
+Logistic Regression,Unspecified,Illegal Animal Kept as Pet
+Logistic Regression,BROOKLYN,Unsanitary Pigeon Condition
+Logistic Regression,STATEN ISLAND,Air Quality
+Logistic Regression,QUEENS,Unsanitary Pigeon Condition
+Logistic Regression,QUEENS,Water Quality
+Logistic Regression,QUEENS,Unsanitary Animal Facility
+Logistic Regression,STATEN ISLAND,For Hire Vehicle Complaint
+Logistic Regression,BROOKLYN,Broken Parking Meter
+Logistic Regression,BROOKLYN,Wood Pile Remaining
+Logistic Regression,QUEENS,Green Taxi Report
+Logistic Regression,QUEENS,Dispatched Taxi Complaint
+Logistic Regression,BROOKLYN,Illegal Animal Sold
+Logistic Regression,Unspecified,Bike Rack Condition
+Logistic Regression,STATEN ISLAND,Broken Parking Meter
+Logistic Regression,MANHATTAN,Borough Office
+Logistic Regression,STATEN ISLAND,GENERAL
+Logistic Regression,STATEN ISLAND,Blocked Driveway
+Logistic Regression,STATEN ISLAND,Taxi Complaint
+Logistic Regression,Unspecified,Green Taxi Complaint
+Logistic Regression,BRONX,AHV Inspection Unit
+Logistic Regression,Unspecified,Litter Basket Request
+Logistic Regression,,Tattooing
+Logistic Regression,Unspecified,Municipal Parking Facility
+Logistic Regression,Unspecified,Lost Property
+Logistic Regression,Unspecified,Water Quality
+Logistic Regression,MANHATTAN,BEST/Site Safety
+Logistic Regression,BROOKLYN,Litter Basket Complaint
+Logistic Regression,QUEENS,Unsanitary Animal Pvt Property
+Logistic Regression,BROOKLYN,Street Condition
+Logistic Regression,,Encampment
+Logistic Regression,MANHATTAN,Lost Property
+Logistic Regression,QUEENS,Litter Basket Request
+Logistic Regression,BROOKLYN,Lost Property
+SVM,BROOKLYN,Drinking Water
+SVM,MANHATTAN,Building/Use
+SVM,MANHATTAN,Recycling Basket Complaint
+SVM,MANHATTAN,Abandoned Vehicle
+SVM,BROOKLYN,Borough Office
+SVM,STATEN ISLAND,Mold
+SVM,,Food Establishment
+SVM,Unspecified,Drug Activity
+SVM,Unspecified,Elevator
+SVM,MANHATTAN,Drinking Water
+SVM,QUEENS,Drinking Water
+SVM,MANHATTAN,Lost Property
+SVM,STATEN ISLAND,Encampment
+SVM,MANHATTAN,Blocked Driveway
+SVM,,Ferry Inquiry
+SVM,MANHATTAN,Taxi Complaint
+SVM,MANHATTAN,Animal in a Park
+SVM,,Litter Basket Complaint
+SVM,STATEN ISLAND,Green Taxi Report
+SVM,QUEENS,Broken Parking Meter
+SVM,STATEN ISLAND,Consumer Complaint
+SVM,QUEENS,Litter Basket Complaint
+SVM,STATEN ISLAND,Abandoned Vehicle
+SVM,QUEENS,GENERAL
+SVM,,New Tree Request
+SVM,STATEN ISLAND,Violation of Park Rules
+SVM,Unspecified,Blocked Driveway
+SVM,MANHATTAN,Illegal Dumping
+SVM,QUEENS,OUTSIDE BUILDING
+SVM,QUEENS,Drug Activity
+SVM,MANHATTAN,Noise - Park
+SVM,STATEN ISLAND,Posting Advertisement
+SVM,QUEENS,Green Taxi Report
+SVM,BROOKLYN,ELECTRIC
+SVM,BROOKLYN,Institution Disposal Complaint
+SVM,STATEN ISLAND,Animal in a Park
+SVM,BROOKLYN,Wood Pile Remaining
+SVM,QUEENS,Building/Use
+SVM,MANHATTAN,Drug Activity
+SVM,QUEENS,Animal in a Park
+SVM,MANHATTAN,Wood Pile Remaining
+SVM,STATEN ISLAND,Calorie Labeling
+SVM,BROOKLYN,Building/Use
+SVM,STATEN ISLAND,HEAT/HOT WATER
+SVM,STATEN ISLAND,OUTSIDE BUILDING
+SVM,MANHATTAN,Bike/Roller/Skate Chronic
+SVM,STATEN ISLAND,Illegal Animal Sold
+SVM,MANHATTAN,Broken Parking Meter
+SVM,QUEENS,For Hire Vehicle Complaint
+SVM,QUEENS,Taxi Licensee Complaint
+SVM,QUEENS,Calorie Labeling
+SVM,MANHATTAN,Illegal Animal Sold
+SVM,QUEENS,Noise - Park
+SVM,BROOKLYN,Noise - Park
+SVM,STATEN ISLAND,Institution Disposal Complaint
+SVM,BROOKLYN,Animal in a Park
+SVM,STATEN ISLAND,ZTESTINT
+SVM,,UNSANITARY CONDITION
+SVM,QUEENS,UNSANITARY CONDITION
+SVM,MANHATTAN,New Tree Request
+SVM,STATEN ISLAND,Noise - Park
+SVM,BROOKLYN,APPLIANCE
+SVM,QUEENS,ZTESTINT
+SVM,MANHATTAN,Commercial Disposal Complaint
+SVM,MANHATTAN,For Hire Vehicle Complaint
+SVM,MANHATTAN,Green Taxi Report
+SVM,STATEN ISLAND,DOOR/WINDOW
+SVM,STATEN ISLAND,For Hire Vehicle Complaint
+SVM,MANHATTAN,Unsanitary Animal Pvt Property
+SVM,MANHATTAN,Indoor Sewage
+SVM,,Taxi Licensee Complaint
+SVM,STATEN ISLAND,Illegal Dumping
+SVM,,Public Toilet
+SVM,STATEN ISLAND,GENERAL
+SVM,STATEN ISLAND,Taxi Licensee Complaint
+SVM,BRONX,AHV Inspection Unit
+SVM,MANHATTAN,Institution Disposal Complaint
+SVM,QUEENS,Institution Disposal Complaint
+SVM,QUEENS,Unsanitary Animal Pvt Property
+SVM,BROOKLYN,For Hire Vehicle Complaint
