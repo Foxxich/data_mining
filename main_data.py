@@ -6,7 +6,6 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objs as go
 import seaborn as sns
-from plotly.subplots import make_subplots
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
@@ -14,11 +13,49 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.svm import SVC
 from sklearn.tree import DecisionTreeClassifier
 from statsmodels.tsa.arima.model import ARIMA
-from statsmodels.tsa.seasonal import seasonal_decompose
 
 # Ignorowanie wszystkich ostrzeżeń użytkownika
 warnings.filterwarnings('ignore', category=UserWarning)
 matplotlib.use('TkAgg')  # Zmiana backendu na 'TkAgg'
+
+
+def algorithms_data_to_csv():
+    # Saving data using models and pred variables to CSV
+    models = [('Decision Tree', dt_model, dt_y_pred),
+              ('Logistic Regression', lr_model, lr_y_pred),
+              ('SVM', svm_model, svm_y_pred)]
+    results_df = pd.DataFrame(columns=['Model', 'Borough', 'Predicted Complaint'])
+    for model_name, model, pred in models[:3]:
+        if pred is not None:
+            results = classifier.generate_results_dataframe(pred)
+            if 'Borough' in results and results['Borough'].dtype == 'object':
+                results['Model'] = model_name
+                results_df = pd.concat([results_df, results], ignore_index=True)
+            else:
+                print(f"Skipping '{model_name}' - 'Borough' inverse transform due to inconsistent data type.")
+    if 'Borough' in results_df:
+        try:
+            results_df['Borough'] = classifier.le_borough.inverse_transform(results_df['Borough'])
+        except Exception as e:
+            print(f"Error: {e}. Unable to perform 'Borough' inverse transform.")
+    results_df = results_df.drop_duplicates().groupby('Predicted Complaint').head(10)
+    results_df.to_csv('results_from_models_with_model.csv', index=False)
+
+
+def save_complaints_per_district_yearly_to_html(complaints):
+    # Tworzenie wykresu słupkowego za pomocą biblioteki Plotly Express
+    fig = px.bar(complaints,
+                 x='Year',
+                 y='Rating',
+                 color='Borough',
+                 labels={'Year': 'Rok', 'Rating': 'Ocena', 'Borough': 'Dzielnica'},
+                 title='Ocena Skarg na Dzielnice w Poszczególnych Latach')
+
+    # Konfiguracja układu wykresu
+    fig.update_layout(barmode='group')
+
+    # Zapis wykresu do pliku HTML
+    fig.write_html('complaints_per_district_yearly.html')
 
 
 class ComplaintsClassifier:
@@ -95,33 +132,33 @@ class ComplaintsClassifier:
     # Użycie trzech różnych algorytmów do porównania
     # Trenowanie i predykcja za pomocą Drzewa Decyzyjnego
     def decision_tree(self):
-        dt_model = DecisionTreeClassifier()
-        dt_model.fit(self.X_train, self.y_train)
-        dt_y_pred = dt_model.predict(self.X_test)
-        dt_accuracy = accuracy_score(self.y_test, dt_y_pred)
+        model = DecisionTreeClassifier()
+        model.fit(self.X_train, self.y_train)
+        pred = model.predict(self.X_test)
+        dt_accuracy = accuracy_score(self.y_test, pred)
         print(f"\nDokładność modelu drzewa decyzyjnego: {round(dt_accuracy * 100, 1)}")
-        self.generate_plot_results_city(dt_y_pred, 'decision_tree')
-        return dt_model, dt_y_pred
+        self.generate_plot_results_city(pred, 'decision_tree')
+        return model, pred
 
     # Trenowanie i predykcja za pomocą Regresji Logistycznej
     def logistic_regression(self):
-        lr_model = LogisticRegression(max_iter=10000)
-        lr_model.fit(self.X_train_scaled, self.y_train)
-        lr_y_pred = lr_model.predict(self.X_test_scaled)
-        lr_accuracy = accuracy_score(self.y_test, lr_y_pred)
+        model = LogisticRegression(max_iter=10000)
+        model.fit(self.X_train_scaled, self.y_train)
+        pred = model.predict(self.X_test_scaled)
+        lr_accuracy = accuracy_score(self.y_test, pred)
         print(f"Dokładność modelu regresji logistycznej: {round(lr_accuracy * 100, 1)}")
-        self.generate_plot_results_city(lr_y_pred, 'logistic_regression')
-        return lr_model, lr_y_pred
+        self.generate_plot_results_city(pred, 'logistic_regression')
+        return model, pred
 
-    # Trenowanie i predykcja za pomocą SVM
+    # Trenowanie i predykcja za pomocą SVC
     def svc(self):
-        svm_model = SVC(kernel='linear')
-        svm_model.fit(self.X_train_scaled, self.y_train)
-        svm_y_pred = svm_model.predict(self.X_test_scaled)
-        svm_accuracy = accuracy_score(self.y_test, svm_y_pred)
+        model = SVC(kernel='linear')
+        model.fit(self.X_train_scaled, self.y_train)
+        y_pred = model.predict(self.X_test_scaled)
+        svm_accuracy = accuracy_score(self.y_test, y_pred)
         print(f"Dokładność modelu SVM: {round(svm_accuracy * 100, 1)}")
-        self.generate_plot_results_city(svm_y_pred, 'svc')
-        return svm_model, svm_y_pred
+        self.generate_plot_results_city(y_pred, 'svc')
+        return model, y_pred
 
     def generate_plot_results_city(self, y_pred, model):
         # Przeprowadzenie predykcji na całym zestawie danych
@@ -150,7 +187,7 @@ class ComplaintsClassifier:
         plt.tight_layout()
         plt.savefig(model + '_city_results.png')
 
-    def generate_results_dataframe(self, model, y_pred):
+    def generate_results_dataframe(self, y_pred):
         """
         Tworzy DataFrame z wynikami predykcji dla każdej z dzielnic.
         """
@@ -160,9 +197,9 @@ class ComplaintsClassifier:
         results_df = pd.DataFrame({'Borough': x_test_borough_labels, 'Predicted Complaint': y_pred_labels})
         return results_df
 
-    def generate_advanced_plot_results(self, model, y_pred, type):
+    def generate_advanced_plot_results(self, y_pred, model_type):
         # Generowanie ramki danych z wynikami modelu
-        results_df = self.generate_results_dataframe(model, y_pred)
+        results_df = self.generate_results_dataframe(y_pred)
 
         # Obliczanie procentowej liczby zgłoszeń dla każdej kombinacji Borough i Predicted Complaint
         results_count = results_df.groupby(['Borough', 'Predicted Complaint']).size().reset_index(name='Counts')
@@ -174,13 +211,13 @@ class ComplaintsClassifier:
                      labels={'Percentage': 'Procent zgłoszeń'})
         fig.update_layout(title='Rozkład przewidywanych problemów w dzielnicach', xaxis_title='Dzielnica',
                           yaxis_title='Procent zgłoszeń')
-        fig.write_html('advanced_plot_results_' + type + '.html')  # Zapisanie wykresu jako interaktywny plik HTML
+        fig.write_html('advanced_plot_results_' + model_type + '.html')  # Zapisanie wykresu jako interaktywny plik HTML
 
     # Model ARIMA (Autoregressive Integrated Moving Average) jest modelem statystycznym
     # wykorzystywanym do analizy i prognozowania szeregów czasowych.
     # W moim kodzie, model ARIMA jest dopasowywany do szeregu czasowego wygenerowanego
     # z przewidywanych wartości zgłoszeń.
-    def time_series_decomposition_and_forecast(self, y_pred, model_type):
+    def time_series_forecast(self, y_pred, model_type):
         # Przygotowanie DataFrame z przewidywaniami i ich datami
         pred_df = pd.DataFrame({'Predicted': y_pred}, index=self.X_test.index)
 
@@ -194,34 +231,6 @@ class ComplaintsClassifier:
 
         # Agregowanie przewidzianych wartości na każdy dzień
         daily_predicted_counts = merged_df['Predicted'].resample('D').sum()
-
-        # Dekompozycja serii czasowej
-        decomposition = seasonal_decompose(daily_predicted_counts.dropna(), model='additive')
-
-        # Tworzenie subwykresów dla dekompozycji
-        fig = make_subplots(rows=3, cols=1, shared_xaxes=True, vertical_spacing=0.02,
-                            subplot_titles=(
-                                f'Trend - {model_type}', f'Sezonowość - {model_type}', f'Reszta - {model_type}'))
-
-        # Wykres składowej Trend
-        fig.add_trace(go.Scatter(x=decomposition.trend.index, y=decomposition.trend, mode='lines', name='Trend'), row=1,
-                      col=1)
-
-        # Wykres składowej Seasonal
-        fig.add_trace(
-            go.Scatter(x=decomposition.seasonal.index, y=decomposition.seasonal, mode='lines', name='Seasonal'), row=2,
-            col=1)
-
-        # Wykres składowej Residual
-        fig.add_trace(go.Scatter(x=decomposition.resid.index, y=decomposition.resid, mode='lines', name='Residual'),
-                      row=3, col=1)
-
-        # Aktualizacja układu wykresu
-        fig.update_layout(height=800, title_text=f"Time Series Decomposition - {model_type}")
-        fig.update_xaxes(tickangle=-45, nticks=20)
-
-        # Zapis do pliku HTML
-        fig.write_html(f'decomposition_{model_type}.html')
 
         # Prognoza ARIMA
         model = ARIMA(daily_predicted_counts.dropna(), order=(5, 1, 0))
@@ -271,28 +280,13 @@ class ComplaintsClassifier:
 
         return complaints_by_year_and_district
 
-    def save_complaints_per_district_yearly_to_html(self, complaints_per_district_yearly):
-        # Tworzenie wykresu słupkowego za pomocą biblioteki Plotly Express
-        fig = px.bar(complaints_per_district_yearly,
-                     x='Year',
-                     y='Rating',
-                     color='Borough',
-                     labels={'Year': 'Rok', 'Rating': 'Ocena', 'Borough': 'Dzielnica'},
-                     title='Ocena Skarg na Dzielnice w Poszczególnych Latach')
-
-        # Konfiguracja układu wykresu
-        fig.update_layout(barmode='group')
-
-        # Zapis wykresu do pliku HTML
-        fig.write_html('complaints_per_district_yearly.html')
-
-    def save_all_to_csv(self, complaints_per_district_yearly):
+    def save_all_to_csv(self, complaints):
         # Pobranie oryginalnych nazw etykiet dla kolumn Complaint Type i Borough
-        complaint_type_labels = self.le_complaint.inverse_transform(complaints_per_district_yearly['Complaint Type'])
-        borough_labels = self.le_borough.inverse_transform(complaints_per_district_yearly['Borough'])
+        complaint_type_labels = self.le_complaint.inverse_transform(complaints['Complaint Type'])
+        borough_labels = self.le_borough.inverse_transform(complaints['Borough'])
 
         # Utworzenie kopii DataFrame z prawidłowymi nazwami etykiet
-        complaints_with_labels = complaints_per_district_yearly.copy()
+        complaints_with_labels = complaints.copy()
         complaints_with_labels['Complaint Type'] = complaint_type_labels
         complaints_with_labels['Borough'] = borough_labels
 
@@ -302,28 +296,6 @@ class ComplaintsClassifier:
 
         # Zapisanie ocen skarg do pliku CSV
         top_5_per_district.to_csv('top_5_complaints_per_district.csv', index=False)
-
-    def algorithms_data_to_csv(self):
-        # Saving data using models and pred variables to CSV
-        models = [('Decision Tree', dt_model, dt_y_pred),
-                  ('Logistic Regression', lr_model, lr_y_pred),
-                  ('SVM', svm_model, svm_y_pred)]
-        results_df = pd.DataFrame(columns=['Model', 'Borough', 'Predicted Complaint'])
-        for model_name, model, pred in models[:3]:
-            if pred is not None:
-                results = classifier.generate_results_dataframe(model, pred)
-                if 'Borough' in results and results['Borough'].dtype == 'object':
-                    results['Model'] = model_name
-                    results_df = pd.concat([results_df, results], ignore_index=True)
-                else:
-                    print(f"Skipping '{model_name}' - 'Borough' inverse transform due to inconsistent data type.")
-        if 'Borough' in results_df:
-            try:
-                results_df['Borough'] = classifier.le_borough.inverse_transform(results_df['Borough'])
-            except Exception as e:
-                print(f"Error: {e}. Unable to perform 'Borough' inverse transform.")
-        results_df = results_df.drop_duplicates().groupby('Predicted Complaint').head(10)
-        results_df.to_csv('results_from_models_with_model.csv', index=False)
 
 
 if __name__ == "__main__":
@@ -338,20 +310,20 @@ if __name__ == "__main__":
     # Przeliczenie ratingu skarg dla każdej dzielnicy z rozbiciem na lata
     complaints_per_district_yearly = classifier.complaints_per_district_yearly()
     # Zapisanie wyników do pliku HTML
-    classifier.save_complaints_per_district_yearly_to_html(complaints_per_district_yearly)
+    save_complaints_per_district_yearly_to_html(complaints_per_district_yearly)
 
     dt_model, dt_y_pred = classifier.decision_tree()
-    classifier.generate_advanced_plot_results(dt_model, dt_y_pred, 'decision_tree')
-    classifier.time_series_decomposition_and_forecast(dt_y_pred, 'decision_tree')
+    classifier.generate_advanced_plot_results(dt_y_pred, 'decision_tree')
+    classifier.time_series_forecast(dt_y_pred, 'decision_tree')
 
     lr_model, lr_y_pred = classifier.logistic_regression()
-    classifier.generate_advanced_plot_results(lr_model, lr_y_pred, 'logistic_regression')
-    classifier.time_series_decomposition_and_forecast(lr_y_pred, 'logistic_regression')
+    classifier.generate_advanced_plot_results(lr_y_pred, 'logistic_regression')
+    classifier.time_series_forecast(lr_y_pred, 'logistic_regression')
 
     svm_model, svm_y_pred = classifier.svc()
-    classifier.generate_advanced_plot_results(svm_model, svm_y_pred, 'svc')
-    classifier.time_series_decomposition_and_forecast(svm_y_pred, 'svc')
+    classifier.generate_advanced_plot_results(svm_y_pred, 'svc')
+    classifier.time_series_forecast(svm_y_pred, 'svc')
 
     classifier.save_all_to_csv(classifier.complaints_per_district_yearly())
 
-    classifier.algorithms_data_to_csv()
+    algorithms_data_to_csv()
