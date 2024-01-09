@@ -20,10 +20,9 @@ matplotlib.use('TkAgg')  # Zmiana backendu na 'TkAgg'
 
 
 def algorithms_data_to_csv():
-    # Saving data using models and pred variables to CSV
     models = [('Decision Tree', dt_model, dt_y_pred),
               ('Logistic Regression', lr_model, lr_y_pred),
-              ('SVM', svm_model, svm_y_pred)]
+              ('SVC', svc_model, svc_y_pred)]
     results_df = pd.DataFrame(columns=['Model', 'Borough', 'Predicted Complaint'])
     for model_name, model, pred in models[:3]:
         if pred is not None:
@@ -39,7 +38,7 @@ def algorithms_data_to_csv():
         except Exception as e:
             print(f"Error: {e}. Unable to perform 'Borough' inverse transform.")
     results_df = results_df.drop_duplicates().groupby('Predicted Complaint').head(10)
-    results_df.to_csv('results_from_models_with_model.csv', index=False)
+    results_df.to_csv('results_from_model.csv', index=False)
 
 
 def save_complaints_per_district_yearly_to_html(complaints):
@@ -108,8 +107,8 @@ class ComplaintsClassifier:
             if df_filled[column].dtype == 'object':
                 df_filled[column] = self.le.fit_transform(df_filled[column].astype(str))
 
-        # Ograniczenie zbioru danych do losowego podzbioru (np. 100% oryginalnych danych)
-        df_sample = df_filled.sample(frac=1.0, random_state=42)
+        # Ograniczenie zbioru danych do losowego podzbioru (np. 1% oryginalnych danych)
+        df_sample = df_filled.sample(frac=0.01, random_state=42)
 
         # Podział ograniczonego zestawu danych na część do treningu i testowania modelu
         x = df_sample.drop('Complaint Type', axis=1)  # Cechy (bez kolumny 'Complaint Type')
@@ -155,8 +154,8 @@ class ComplaintsClassifier:
         model = SVC(kernel='linear')
         model.fit(self.X_train_scaled, self.y_train)
         y_pred = model.predict(self.X_test_scaled)
-        svm_accuracy = accuracy_score(self.y_test, y_pred)
-        print(f"Dokładność modelu SVM: {round(svm_accuracy * 100, 1)}")
+        svc_accuracy = accuracy_score(self.y_test, y_pred)
+        print(f"Dokładność modelu SVC: {round(svc_accuracy * 100, 1)}")
         self.generate_plot_results_city(y_pred, 'svc')
         return model, y_pred
 
@@ -320,9 +319,9 @@ if __name__ == "__main__":
     classifier.generate_advanced_plot_results(lr_y_pred, 'logistic_regression')
     classifier.time_series_forecast(lr_y_pred, 'logistic_regression')
 
-    svm_model, svm_y_pred = classifier.svc()
-    classifier.generate_advanced_plot_results(svm_y_pred, 'svc')
-    classifier.time_series_forecast(svm_y_pred, 'svc')
+    svc_model, svc_y_pred = classifier.svc()
+    classifier.generate_advanced_plot_results(svc_y_pred, 'svc')
+    classifier.time_series_forecast(svc_y_pred, 'svc')
 
     classifier.save_all_to_csv(classifier.complaints_per_district_yearly())
 
